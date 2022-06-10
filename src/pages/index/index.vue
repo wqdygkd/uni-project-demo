@@ -1,6 +1,27 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<view class="top-bar">
+			<uni-nav-bar >
+				<view>通讯录</view>
+				<block slot="left">
+					<view class="right">
+						<uni-icons class="search" type="search" size="30"></uni-icons>
+						<text >
+							<uni-icons  class="action" type="plus" size="30"></uni-icons>
+						</text>
+					</view>
+				</block>
+
+				<block slot="right">
+					<view class="right">
+						<uni-icons class="search" type="search" size="30"></uni-icons>
+						<text >
+							<uni-icons  class="action" type="plus" size="30"></uni-icons>
+						</text>
+					</view>
+				</block>
+			</uni-nav-bar>
+		</view>
 		<view>
 			<text class="title">{{title}}111</text>
 		</view>
@@ -8,42 +29,25 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
+// import { uniIcons } from '@dcloudio/uni-ui'
+export default {
+	components: {
+		// uniIcons
+	},
+	data() {
+		return {
+			title: 'Hello'
 		}
+	},
+	onLoad() {
+
+	},
+	methods: {
+
 	}
+}
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style lang="scss">
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>
