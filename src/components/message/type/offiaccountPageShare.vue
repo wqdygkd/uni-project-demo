@@ -100,7 +100,7 @@ export default {
 
   .separator {
     &::before {
-      content: '';
+      content: "";
       transform: scaleY(0.5);
       display: block;
       height: 1px;

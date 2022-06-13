@@ -1,7 +1,7 @@
 <template>
-	<view class="content">
-		<MessageCart />
-	</view>
+  <view class="content">
+    <MessageCart />
+  </view>
 </template>
 
 <script>
@@ -27,8 +27,8 @@ export default {
   position: relative;
 }
 .msg {
-	position: absolute;
-	right: 30px;
-	top: 30px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 </style>
