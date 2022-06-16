@@ -34,9 +34,9 @@ export default {
       loading: false,
       detail: {
         description: "元本空间交易平台APP上线，功能优化升级|千万元奖品送完为止",
-        logo: "http://mmbiz.qpic.cn/mmbiz_png/ZgpvpluCJTiavaksGH44ibN3EgwVFcnFQeASyRNUiammY7kRefXbB6mIG6pFTzOt0ziauHERY8qBpayGolbAK9WKoA/0?wx_fmt=png",
+        logo: "https://images.weserv.nl/?url=http://mmbiz.qpic.cn/mmbiz_png/ZgpvpluCJTiavaksGH44ibN3EgwVFcnFQeASyRNUiammY7kRefXbB6mIG6pFTzOt0ziauHERY8qBpayGolbAK9WKoA/0?wx_fmt=png",
         nickname: "元本空间3D",
-        pic: "http://mmbiz.qpic.cn/mmbiz_jpg/CuoDGGD2IDrb2jnSg1meguuxIkbg31GziaIBw6hTRk7bErPV02jM04lv2OZJyQ5W0TDRbLWt4A8Coiak8snJqlEQ/0?wx_fmt=jpeg",
+        pic: "https://images.weserv.nl/?url=http://mmbiz.qpic.cn/mmbiz_jpg/CuoDGGD2IDrb2jnSg1meguuxIkbg31GziaIBw6hTRk7bErPV02jM04lv2OZJyQ5W0TDRbLWt4A8Coiak8snJqlEQ/0?wx_fmt=jpeg",
         title: "元本空间交易平台APP上线，功能优化升级|千万元奖品送完为止"
       }
     }

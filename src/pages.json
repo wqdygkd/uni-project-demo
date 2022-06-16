@@ -7,7 +7,7 @@
     {
       "path": "pages/tab1/index",
       "style": {
-        "navigationBarTitleText": "通讯录", //设置页面标题文字
+        "navigationBarTitleText": "uni-app", //设置页面标题文字
         "enablePullDownRefresh": true, //开启下拉刷新
         "h5": {
           "titleNView": false
@@ -17,45 +17,10 @@
         }
       }
     },
-    {
-      "path": "pages/tab2/index",
-      "style": {
-        "navigationBarTitleText": "通讯录", //设置页面标题文字
-        "enablePullDownRefresh": true, //开启下拉刷新
-        "h5": {
-          "titleNView": false
-        },
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tab3/index",
-      "style": {
-        "navigationBarTitleText": "通讯录", //设置页面标题文字
-        "enablePullDownRefresh": true, //开启下拉刷新
-        "h5": {
-          "titleNView": false
-        },
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    },
-    {
-      "path": "pages/tab4/index",
-      "style": {
-        "navigationBarTitleText": "通讯录", //设置页面标题文字
-        "enablePullDownRefresh": true, //开启下拉刷新
-        "h5": {
-          "titleNView": false
-        },
-        "app-plus": {
-          "titleNView": false
-        }
-      }
-    }
+    { "path": "pages/tab2/index" },
+    { "path": "pages/tab3/index" },
+    { "path": "pages/tab4/index" },
+    { "path": "pages/chat/index" }
   ],
   "tabBar": {
     "color": "#7A7E83",
@@ -93,7 +58,13 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F8F8F8",
+    "h5": {
+      "titleNView": false
+    },
+    "app-plus": {
+      "titleNView": false
+    }
   },
   "easycom": {
     "autoscan": true,

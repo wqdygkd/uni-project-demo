@@ -9,7 +9,7 @@ export default {
   props: {
     avatarUrl: {
       type: String,
-      default: 'https://www.gravatar.com/avatar/933ea1dccd7d902a0c7a92b91c549703'
+      default: 'https://broker.mklij.com/favicon.ico'
     }
   }
 }

@@ -19,15 +19,20 @@
     <view>
       <uni-list>
         <uni-list :border="true">
-          <!-- 头像显示角标 -->
-          <uni-list-chat
-            title="uni-app"
-            avatar="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
-            note="您收到一条新的消息"
-            time="20:20"
-            badge-positon="left"
-            badge-text="99"
-          ></uni-list-chat>
+          <navigator animation-type="slide-in-right" animation-duration="300" url="/pages/chat/index?id=1&name=uniapp">
+            <!-- 头像显示角标 -->
+            <uni-list-chat
+              title="uni-app"
+              avatar="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
+              note="您收到一条新的消息"
+              time="20:20"
+              badge-positon="left"
+              badge-text="99"
+              clickable
+              @click="toChat"
+            ></uni-list-chat>
+          </navigator>
+
           <!-- 显示多头像 -->
           <uni-list-chat
             title="uni-app"
@@ -69,7 +74,12 @@ export default {
 
   },
   methods: {
-
+    toChat() {
+      uni.navigateTo({
+        url: '/pages/chat/index?id=1&name=uniapp',
+        animationType: 'slide-in-right',
+      });
+    }
   }
 }
 </script>
