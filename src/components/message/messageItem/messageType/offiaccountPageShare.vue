@@ -1,5 +1,5 @@
 <template>
-  <view class="message">
+  <view class="offiaccount-page-share">
     <view class="title line-2">{{detail.title}}</view>
     <view class="sub-title">
       <view class="description line-3">{{detail.description}}</view>
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.message {
+.offiaccount-page-share {
   border-radius: 5px;
   width: 223px;
   padding: 10px 8px 0px 10px;

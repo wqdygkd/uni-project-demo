@@ -19,7 +19,7 @@
     <view>
       <uni-list>
         <uni-list :border="true">
-          <navigator animation-type="slide-in-right" animation-duration="300" url="/pages/chat/index?id=1&name=uniapp">
+          <view @click="toChat">
             <!-- 头像显示角标 -->
             <uni-list-chat
               title="uni-app"
@@ -31,7 +31,7 @@
               clickable
               @click="toChat"
             ></uni-list-chat>
-          </navigator>
+          </view>
 
           <!-- 显示多头像 -->
           <uni-list-chat
@@ -76,9 +76,10 @@ export default {
   methods: {
     toChat() {
       uni.navigateTo({
-        url: '/pages/chat/index?id=1&name=uniapp',
+        url: '/pages/chat/index',
         animationType: 'slide-in-right',
-      });
+        animationDuration: 300
+      })
     }
   }
 }

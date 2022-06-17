@@ -1,20 +1,23 @@
 <template>
-  <view class="content">
-    <MessageCart />
+  <view class="message">
+    <MessageItem type="time" :msg={} />
+    <!-- <MessageItem /> -->
   </view>
 </template>
 
 <script>
-import MessageCart from './messageCart'
+import MessageItem from './messageItem/messageItem'
 export default {
 	components: {
-		MessageCart
+		MessageItem
 	},
 	data() {
 		return {
 			messageList: [
         {
-          type: ''
+          type: '',
+          time: '',
+          article: ''
         }
       ]
 		}
@@ -23,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-.content {
+.message {
   position: relative;
 }
 .msg {

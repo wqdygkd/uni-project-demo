@@ -77,8 +77,7 @@
   "mp-qq": {
     "usingComponents": true
   },
-  /* h5 配置 */
-  /* https://uniapp.dcloud.io/collocation/manifest?id=h5 */
+  /* h5 配置 https://uniapp.dcloud.io/collocation/manifest?id=h5 */
   "h5": {
     "title": "h5应用", // 页面标题
     "template": "/public/index.html", // 模板路径
