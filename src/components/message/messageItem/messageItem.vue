@@ -3,6 +3,16 @@
     <block v-if="type === 'time'">
       <Time :time="msg.time" />
     </block>
+    <div class="has-avatar" :class="{'right': msg.bySelf}" v-else>
+      <Avatar class="avatar" />
+      <view class="message-item-content">
+        <view class="user-name" v-if="!msg.bySelf">{{msg.from.userName}}</view>
+        <div>
+          <TextMessage :text="msg.text" />
+          <div :class="{'arrow-left': !msg.bySelf, 'arrow-right': msg.bySelf}"></div>
+        </div>
+      </view>
+    </div>
 
     <!-- <div class="has-avatar avatar-left" v-else>
       <Avatar class="avatar" />
@@ -24,11 +34,13 @@
 <script>
 import OffiaccountPageShare from './messageType/offiaccountPageShare'
 import Time from './messageType/time'
+import TextMessage from './messageType/textMessage'
 import Avatar from '@/components/avatar/avatar'
 export default {
 	components: {
 		OffiaccountPageShare,
     Time,
+    TextMessage,
     Avatar
 	},
   props: {
@@ -51,6 +63,8 @@ export default {
 
 <style lang="scss">
 .message-item {
+  // background: #fff;
+  margin-bottom: 20px;
   .has-avatar {
     display: flex;
     padding: 0 10px;
@@ -78,10 +92,17 @@ export default {
         border-left: 3px solid transparent;
         border-left-width: 0;
         left: -3px;
+        top: 30px;
+      }
+
+      .user-name {
+        font-size: 10px;
+        color: #999;
+        margin-bottom: 2px;
       }
     }
     .avatar {
-      margin-right: 5px;
+      margin-right: 10px;
     }
     &.right {
       justify-content: right;

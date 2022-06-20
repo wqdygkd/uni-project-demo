@@ -11,6 +11,7 @@
         <view class="title">
           <text>群聊</text>
           <text>(2)</text>
+          <image src="./../../static/qiyeweixin.png"></image>
         </view>
         <view class="right">
           <image src="./../../static/more.svg"></image>
@@ -18,20 +19,22 @@
       </view>
 
       <Message class="messageBox"/>
-    </view>
-
-    <view class="test">
-      <image src="./../../static/test.jpg" mode="aspectFill"></image>
-      <image src="./../../static/test.jpg" mode="aspectFill"></image>
+      <SendBar />
+      <view class="test">
+        <image src="./../../static/test.jpg" mode="aspectFit"></image>
+        <image src="./../../static/test.jpg" mode="aspectFill"></image>
+      </view>
     </view>
   </view>
 </template>
 
 <script>
 import Message from '@/components/message/message'
+import SendBar from '@/components/sendbar/sendbar'
 export default {
 	components: {
-		Message
+		Message,
+    SendBar
 	},
 	data() {
 		return {
@@ -72,6 +75,12 @@ export default {
     .title {
       transform: translate(-1.4px, 0.5px);
       color: #1d1d1d;
+      display: flex;
+      align-items: center;
+      uni-image {
+        width: 23px;
+        height: 23px;
+      }
     }
     .left {
       padding-left: 5px;
@@ -92,7 +101,7 @@ export default {
   // 测试
   &::before{
     content: '';
-    display: block;
+    display: none;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -108,14 +117,16 @@ export default {
 // 测试
 .test {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh / 2);
   position:absolute;
-  top: 200px;
+  top: 350px;
   background: #fff;
   z-index: 100;
+  overflow: scroll;
+  border-top: 1px solid #fff;
   uni-image {
     width: 100%;
-    height: 100vh;
+    height: 250vh;
   }
 }
 </style>

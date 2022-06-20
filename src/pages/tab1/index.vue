@@ -17,32 +17,22 @@
       </uni-nav-bar>
     </view>
     <view>
-      <uni-list>
-        <uni-list :border="true">
-          <view @click="toChat">
-            <!-- 头像显示角标 -->
+      <uni-list :border="true" >
+        <view v-for="item in conversationList" :key="item.id">
+          <!-- 头像显示角标 -->
+          <block v-if="item.type === 'groupchat'">
             <uni-list-chat
-              title="uni-app"
-              avatar="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
+              :title="item.title"
+              :avatar-list="item.groupMember.slice(0,9)"
               note="您收到一条新的消息"
               time="20:20"
               badge-positon="left"
-              badge-text="99"
+              :badge-text="item.unreadNum > 99 ? 'dot' : item.unreadNum"
               clickable
               @click="toChat"
             ></uni-list-chat>
-          </view>
-
-          <!-- 显示多头像 -->
-          <uni-list-chat
-            title="uni-app"
-            :avatar-list="avatarList"
-            note="您收到一条新的消息"
-            time="20:20"
-            badge-positon="left"
-            badge-text="dot"
-          ></uni-list-chat>
-        </uni-list>
+          </block>
+        </view>
       </uni-list>
     </view>
   </view>
@@ -56,17 +46,21 @@ export default {
   },
   data() {
     return {
-      title: 'Hello',
-      avatarList: [
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
-        { url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png' },
+      // 会话列表
+      conversationList: [
+        {
+          title: '群聊名称',
+          type: "groupchat", // 会话类型
+          groupMember: [
+            { userName: '', url: 'https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png'}
+          ],
+          from: { userName: '' }, // 发送人
+          time: '', // 时间
+          id: 1,
+          bySelf: false, // 是否是自己发送
+          messageType: 'text', // 消息类型
+          unreadNum: 100 // 未读数
+        }
       ]
     }
   },

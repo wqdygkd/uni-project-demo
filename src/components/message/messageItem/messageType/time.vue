@@ -1,5 +1,5 @@
 <template>
-  <view class="time">1月30日 下午13:34</view>
+  <view class="time">{{time}}</view>
 </template>
 
 <script>
@@ -11,11 +11,7 @@ export default {
       type: String,
       default: '1月1号 下午13:00'
     }
-  },
-  data() {
-    return {
-    }
-  },
+  }
 }
 </script>
 
