@@ -71,7 +71,7 @@ export default {
     toChat() {
       uni.navigateTo({
         url: '/pages/chat/index',
-        animationType: 'slide-in-right',
+        animationType: 'pop-in',
         animationDuration: 300
       })
     }

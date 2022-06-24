@@ -1,6 +1,5 @@
 <template>
   <view class="chat">
-    <view>
       <view :style="'height:' + statusBarHeight + 'px'"></view>
       <view class="top-bar">
         <view>
@@ -19,13 +18,12 @@
       </view>
 
       <Message class="messageBox"/>
-      <SendBar />
+      <SendBar class="send-bar"/>
       <view class="test">
         <image src="./../../static/test.jpg" mode="aspectFit"></image>
         <image src="./../../static/test.jpg" mode="aspectFill"></image>
       </view>
     </view>
-  </view>
 </template>
 
 <script>
@@ -61,7 +59,6 @@ export default {
   position: relative;
   overflow: hidden;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-
   .top-bar {
     position: relative;
     height: 40px;
@@ -98,6 +95,11 @@ export default {
     }
   }
 
+  .send-bar {
+    position: absolute;
+    bottom: 0;
+  }
+
   // 测试
   &::before{
     content: '';
@@ -116,6 +118,7 @@ export default {
 }
 // 测试
 .test {
+  display: none;
   width: 100%;
   height: calc(100vh / 2);
   position:absolute;

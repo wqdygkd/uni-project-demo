@@ -1,16 +1,16 @@
 <template>
-  <view class="send-bar">
+  <view class="send-bar" ref="sendBar">
     <div class="send-bar-block">
-      <view class="icon-box">
+      <view class="left icon-box">
         <image src="./../../static/arrow-left.svg"></image>
       </view>
       <view class="input">
-        <input focus />
+        <textarea auto-height :adjust-position="false" v-model="message" @focus="onfocus" @blur="onblur"/>
       </view>
-      <view class="icon-box">
+      <view class="right icon-box">
         <image src="./../../static/more.svg"></image>
       </view>
-      <view class="icon-box">
+      <view class="right icon-box">
         <image src="./../../static/more.svg"></image>
       </view>
     </div>
@@ -19,11 +19,42 @@
 
 <script>
 export default {
+  data() {
+    return {
+      message: '哈哈哈'
+    }
+  },
 
+  methods: {
+    onfocus(e) {
+      let {height} = e.detail
+      console.log(e.detail )
+      const query = uni.createSelectorQuery().in(this);
+      // query.select('.send-bar').style.bottom = '400px'
+      query.select('.send-bar').boundingClientRect(data => {
+        // console.log("得到布局位置信息" + JSON.stringify(data));
+        // console.log("节点离页面顶部的距离为" + data.top);
+        console.log(Object.keys(uni.createSelectorQuery().select('.send-bar')))
+      }).exec();
+
+    //   uni.createSelectorQuery().select(".sticke").boundingClientRect((res)=>{
+    //     uni.createSelectorQuery().select(".sticke").style.transform
+
+    // }).exec()
+
+      // console.log(this.$refs.sendBar.$el.style.bottom = '400px')
+    },
+
+    onblur(e) {
+      this.$refs.sendBar.$el.style.bottom = '0'
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
 .send-bar {
+  transition: all 300ms;
+  z-index: 1000;
   // position: relative;
 
   // .title {
@@ -53,7 +84,7 @@ export default {
 }
 
 .send-bar-block {
-  height: 40px;
+  height: 45px;
   width: 100%;
   background: #f7f7f7;
   font-size: 14px;
@@ -63,16 +94,30 @@ export default {
   justify-content: space-between;
   .icon-box {
     width: 25px;
+    text-align: center;
     uni-image {
       width: 25px;
       height: 25px;
     }
+
+    &.left {
+      width: 40px;
+    }
+    &.right {
+      width: 38px;
+    }
   }
   .input {
     flex: 1;
-    height: 25px;
-    line-height: 25px;
+    // height: 33px;
+    min-height: 33px;
+    line-height: 33px;
     background: #fff;
+    border-radius: 3px;
+    uni-textarea {
+      padding: 6px;
+      height: 100%;
+    }
   }
 }
 </style>
