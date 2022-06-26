@@ -1,6 +1,7 @@
 <template>
   <div class="text" :class="{'self': msg.bySelf}">
     {{ msg.text }}
+    <!-- V<text style="transform: scale(0.3);"> </text> -->
   </div>
 </template>
 
@@ -23,10 +24,10 @@ export default {
   max-width: 257px;
   box-sizing: border-box;
   font-size: 14px;
-  padding: 7.7px 11px;
+  padding: 7.8px 11px;
   background: #fff;
   width: fit-content;
-  // letter-spacing: 1px;
+  // letter-spacing: .5px;
   text-align: justify;
   line-height: 18px;
   &.self {

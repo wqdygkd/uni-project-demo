@@ -67,7 +67,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .message-item {
   // background: #fff;
   // margin-bottom: 20px;

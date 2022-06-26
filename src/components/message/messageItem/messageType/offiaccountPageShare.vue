@@ -33,11 +33,11 @@ export default {
     return {
       loading: false,
       detail: {
-        description: "元本空间交易平台APP上线，功能优化升级|千万元奖品送完为止",
+        title: "超元空间 | 嗨爆夏日计划进行中 | 新用户注册 | 分享、邀新得好礼",
+        description: "超元空间嗨爆夏日计划 | 邀新分享新用户注册赢实物大奖",
         logo: "https://images.weserv.nl/?url=http://mmbiz.qpic.cn/mmbiz_png/ZgpvpluCJTiavaksGH44ibN3EgwVFcnFQeASyRNUiammY7kRefXbB6mIG6pFTzOt0ziauHERY8qBpayGolbAK9WKoA/0?wx_fmt=png",
-        nickname: "元本空间3D",
+        nickname: "超元空间数字藏品",
         pic: "https://images.weserv.nl/?url=http://mmbiz.qpic.cn/mmbiz_jpg/CuoDGGD2IDrb2jnSg1meguuxIkbg31GziaIBw6hTRk7bErPV02jM04lv2OZJyQ5W0TDRbLWt4A8Coiak8snJqlEQ/0?wx_fmt=jpeg",
-        title: "元本空间交易平台APP上线，功能优化升级|千万元奖品送完为止"
       }
     }
   },
@@ -68,14 +68,16 @@ export default {
 .offiaccount-page-share {
   border-radius: 5px;
   width: 257px;
-  box-sizing: border-box;
-  padding: 10px 8px 0px 10px;
-  background: #95eb6c;
+  padding: 8px 11px 0px 10px;
+  background: #fff;
+  // background: #95eb6c;
   .title {
-    color: #4b4b4b;
+    color: #212121;
     font-size: 14px;
-    line-height: 20px;
-    margin-bottom: 5px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-bottom: 3.5px;
+    letter-spacing: .5px;
   }
 
   .sub-title {
@@ -84,14 +86,18 @@ export default {
     .description {
       color: #909090;
       font-size: 12px;
+      line-height: 15px;
       flex: 1;
       padding-right: 10px;
+      letter-spacing: -.15px;
     }
 
     .image {
-      width: 38px;
-      height: 38px;
-      margin-top: 5px;
+      width: 44px;
+      height: 44px;
+      margin-top: 1px;
+      border: 1px solid #212121;
+      box-sizing: border-box;
       uni-image {
         width: 100%;
         height: 100%;
@@ -106,22 +112,27 @@ export default {
       display: block;
       height: 1px;
       background: #f7f7f7;
+      // background: #212121;
     }
   }
 
   .footer {
     display: flex;
     align-items: center;
-    height: 26px;
+    height: 20px;
     .logo {
-      width: 12px;
-      height: 12px;
+      width: 9px;
+      height: 9px;
+      border: 1px solid #212121;
+      transform: translateY(-1px);
     }
     .nickname {
       padding-left: 4px;
       color: #909090;
-      font-size: 12px;
-      line-height: 12px;
+      font-size: 14px;
+      transform: scale(0.72);
+      transform-origin: left center;
+
     }
   }
 }

@@ -65,7 +65,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .status-bar {
   height: var(--status-bar-height);
   background: #ededed;
@@ -90,6 +90,18 @@ export default {
     align-items: center;
     justify-content: space-between;
     z-index: 100;
+    &::before {
+      content: "";
+      transform: scaleY(0.5);
+      display: block;
+      height: 1px;
+      width: 100%;
+      // background: #212121;
+      background: #e5e5e5;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
     .title {
       transform: translate(-1.4px, 0.5px);
       color: #1d1d1d;
