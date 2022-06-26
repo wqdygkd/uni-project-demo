@@ -17,8 +17,9 @@ export default {
 
 <style lang="scss" scoped>
 uni-image {
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
   border-radius: 3px;
+  display: block;
 }
 </style>

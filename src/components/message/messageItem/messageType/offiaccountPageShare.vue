@@ -24,9 +24,9 @@
 export default {
   name: 'OffiaccountPageShare',
   props: {
-    article: {
-      type:String,
-      default: ''
+    msg: {
+      type: Object,
+      default: () => {}
     }
   },
   data() {
@@ -42,7 +42,7 @@ export default {
     }
   },
   watch: {
-    article: {
+    'msg.article': {
       async handler(newVal, oldVal) {
         this.loading = true
         // await this.getArticleDetail(newVal)
@@ -67,9 +67,10 @@ export default {
 <style lang="scss" scoped>
 .offiaccount-page-share {
   border-radius: 5px;
-  width: 223px;
+  width: 257px;
+  box-sizing: border-box;
   padding: 10px 8px 0px 10px;
-  background: #fff;
+  background: #95eb6c;
   .title {
     color: #4b4b4b;
     font-size: 14px;

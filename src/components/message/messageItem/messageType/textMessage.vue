@@ -1,5 +1,7 @@
 <template>
-  <div class="text">{{ text }}</div>
+  <div class="text" :class="{'self': msg.bySelf}">
+    {{ msg.text }}
+  </div>
 </template>
 
 <script>
@@ -7,27 +9,28 @@
 export default {
   name: 'TextMessage',
   props: {
-    text: {
-      type: String,
-      default: ''
+    msg: {
+      type: Object,
+      default: () => {}
     }
-  },
-  data() {
-    return {
-    }
-  },
-  methods: {
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .text {
-  border-radius: 5px;
-  max-width:  223px;
+  border-radius: 4px;
+  max-width: 257px;
+  box-sizing: border-box;
   font-size: 14px;
-  padding: 8px;
+  padding: 7.7px 11px;
   background: #fff;
   width: fit-content;
+  // letter-spacing: 1px;
+  text-align: justify;
+  line-height: 18px;
+  &.self {
+    background: #95eb6c;
+  }
 }
 </style>

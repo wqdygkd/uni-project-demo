@@ -1,12 +1,10 @@
 <template>
   <view class="chat">
-      <view :style="'height:' + statusBarHeight + 'px'"></view>
-      <view class="top-bar">
-        <view>
-          <text class="left" @click="goBack">
+      <view class="status-bar"></view>
+      <view class="top-bar" >
+          <view class="left" @click="goBack">
             <image src="./../../static/arrow-left.svg"></image>
-          </text>
-        </view>
+          </view>
         <view class="title">
           <text>群聊</text>
           <text>(2)</text>
@@ -17,12 +15,17 @@
         </view>
       </view>
 
-      <Message class="messageBox"/>
+      <Message class="messageBox" :class="{'hidden': hidden}"/>
       <SendBar class="send-bar"/>
-      <view class="test">
-        <image src="./../../static/test.jpg" mode="aspectFit"></image>
-        <image src="./../../static/test.jpg" mode="aspectFill"></image>
+      <view class="test" >
+        <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image>
+        <image src="./1.jpg" mode="aspectFit"></image>
+        <image src="./2.jpg" mode="aspectFit"></image>
+        <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
       </view>
+
+      <view @click="changeBg" class="change">切换背景</view>
+      <view @click="changeshow" class="changeshow">changeshow</view>
     </view>
 </template>
 
@@ -36,29 +39,46 @@ export default {
 	},
 	data() {
 		return {
-      statusBarHeight: 0
+      // statusBarHeight: 0,
+
+      bg: 1,
+      hidden: false
     }
 	},
 	onLoad(){
     // #ifdef APP-PLUS
-    this.statusBarHeight = plus.navigator.getStatusbarHeight(); //状态栏高度
+    // this.statusBarHeight = plus.navigator.getStatusbarHeight(); //状态栏高度
     // #endif
   },
 	methods: {
     goBack() {
       uni.navigateBack()
+    },
+
+    changeBg() {
+      this.bg = this.bg === 1 ? 2 : 1
+    },
+    changeshow() {
+      this.hidden = !this.hidden
     }
 	}
 }
 </script>
 
 <style lang="scss">
+.status-bar {
+  height: var(--status-bar-height);
+  background: #ededed;
+  z-index: 100;
+  position: relative;
+}
 .chat {
   height: 100vh;
   background: #ededed;
   position: relative;
   overflow: hidden;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
   .top-bar {
     position: relative;
     height: 40px;
@@ -69,6 +89,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
     .title {
       transform: translate(-1.4px, 0.5px);
       color: #1d1d1d;
@@ -87,10 +108,12 @@ export default {
       }
     }
     .right {
-      padding-right: 11px;
+      padding-right: 12.5px;
       uni-image {
         width: 25px;
         height: 25px;
+        // transform: translate();
+        display: block;
       }
     }
   }
@@ -98,38 +121,41 @@ export default {
   .send-bar {
     position: absolute;
     bottom: 0;
-  }
-
-  // 测试
-  &::before{
-    content: '';
     display: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: url('./../../static/test.jpg') center top/cover no-repeat;
-    background-position: center -30px;
-    // opacity: 0.2;
   }
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
 }
 // 测试
 .test {
-  display: none;
+  // display: none;
+  display: block;
   width: 100%;
-  height: calc(100vh / 2);
-  position:absolute;
-  top: 350px;
-  background: #fff;
-  z-index: 100;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  // z-index: -1;
   overflow: scroll;
-  border-top: 1px solid #fff;
   uni-image {
     width: 100%;
-    height: 250vh;
+    height: 100%;
+    display: block;
   }
+}
+
+.change {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  z-index: 200;
+}
+.changeshow {
+  position: absolute;
+  left: 100px;
+  top: 140px;
+  z-index: 200;
 }
 </style>

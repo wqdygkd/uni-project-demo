@@ -9,7 +9,7 @@ export default {
   props: {
     time: {
       type: String,
-      default: '1月1号 下午13:00'
+      default: '刚刚'
     }
   }
 }
@@ -20,8 +20,9 @@ export default {
   text-align: center;
   font-size: 14px;
   color: #999;
-  background: #fff;
-  transform: translate(-1px) scale(0.7);
+  // background: #fff;
+  transform: translateY(1px) scale(0.7);
   font-weight: 500;
+  padding: 8.5px 0;
 }
 </style>

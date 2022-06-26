@@ -3,13 +3,17 @@
     <block v-if="type === 'time'">
       <Time :time="msg.time" />
     </block>
+    <block v-else-if="type === 'paipai'">
+      <Paipai />
+    </block>
     <div class="has-avatar" :class="{'right': msg.bySelf}" v-else>
       <Avatar class="avatar" />
       <view class="message-item-content">
         <view class="user-name" v-if="!msg.bySelf">{{msg.from.userName}}</view>
         <div>
-          <TextMessage :text="msg.text" />
-          <div :class="{'arrow-left': !msg.bySelf, 'arrow-right': msg.bySelf}"></div>
+          <!-- <TextMessage  :msg="msg"   /> -->
+          <component :is="msg.type" :msg="msg" />
+          <div :class="{'arrow-left': !msg.bySelf, 'arrow-right': msg.bySelf, 'bg-white': msg.type === 'OffiaccountPageShare'}"></div>
         </div>
       </view>
     </div>
@@ -34,12 +38,14 @@
 <script>
 import OffiaccountPageShare from './messageType/offiaccountPageShare'
 import Time from './messageType/time'
+import Paipai from './messageType/paipai'
 import TextMessage from './messageType/textMessage'
 import Avatar from '@/components/avatar/avatar'
 export default {
 	components: {
 		OffiaccountPageShare,
     Time,
+    Paipai,
     TextMessage,
     Avatar
 	},
@@ -64,26 +70,32 @@ export default {
 <style lang="scss">
 .message-item {
   // background: #fff;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   .has-avatar {
     display: flex;
-    padding: 0 10px;
+    padding: 0 6px;
     .message-item-content {
       position: relative;
+      padding: 5.3px 0 5.3px 5.5px;
+      // margin-top: 5px;
+      // background: #fff;
       .arrow {
         position: absolute;
         width: 0;
         height: 0;
-        border-top: 3px solid transparent;
-        border-bottom: 3px solid transparent;
-        top: 17px;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        top: 15px;
       }
       .arrow-right {
         @extend .arrow;
-        border-left: 3px solid #fff;
-        border-right: 3px solid transparent;
+        border-left: 7px solid #95eb6c;
+        border-right: 7px solid transparent;
         border-right-width: 0;
-        right: -3px;
+        right: -4px;
+        &.bg-white {
+          border-left-color: #fff;
+        }
       }
 
       .arrow-left {
@@ -102,7 +114,10 @@ export default {
       }
     }
     .avatar {
-      margin-right: 10px;
+      // margin-right: 4.2px;
+      padding: 5px;
+      // background: #fff;
+      // margin-top: 10px;
     }
     &.right {
       justify-content: right;
@@ -112,7 +127,7 @@ export default {
       .avatar {
         order: 2;
         margin-right: 0;
-        margin-left: 5px;
+        margin-left: 4.2px;
       }
     }
   }
