@@ -2,18 +2,18 @@
   <view class="offiaccount-page-share">
     <view class="title line-2">{{detail.title}}</view>
     <view class="sub-title">
-      <view class="description line-3">{{detail.description}}</view>
-      <view class="image">
-        <image :src="detail.pic" alt="" mode="aspectFill">
+      <view class="desc line-3">{{detail.desc}}</view>
+      <view class="cover">
+        <image :src="detail.cover" alt="" mode="aspectFill">
       </view>
     </view>
 
     <view class="separator"></view>
 
     <view class="footer">
-      <image class="logo" :src="detail.logo" alt="">
-      <view class="nickname">
-        {{detail.nickname}}
+      <image class="headimg" :src="detail.headimg" alt="">
+      <view class="name">
+        {{detail.name}}
       </view>
     </view>
   </view>
@@ -33,11 +33,11 @@ export default {
     return {
       loading: false,
       detail: {
-        title: "超元空间 | 嗨爆夏日计划进行中 | 新用户注册 | 分享、邀新得好礼",
-        description: "超元空间嗨爆夏日计划 | 邀新分享新用户注册赢实物大奖",
-        logo: "https://images.weserv.nl/?url=http://mmbiz.qpic.cn/mmbiz_png/ZgpvpluCJTiavaksGH44ibN3EgwVFcnFQeASyRNUiammY7kRefXbB6mIG6pFTzOt0ziauHERY8qBpayGolbAK9WKoA/0?wx_fmt=png",
-        nickname: "超元空间数字藏品",
-        pic: "https://images.weserv.nl/?url=http://mmbiz.qpic.cn/mmbiz_jpg/CuoDGGD2IDrb2jnSg1meguuxIkbg31GziaIBw6hTRk7bErPV02jM04lv2OZJyQ5W0TDRbLWt4A8Coiak8snJqlEQ/0?wx_fmt=jpeg",
+        title: "超元空间 | 嗨",
+        desc: "超元空间嗨",
+        cover: "https://images.weserv.nl/?url=https://mmbiz.qlogo.cn/mmbiz_jpg/UIgW2nYmoibEv8SaLH8RQ0UY3DvN9CnNEmzqibHsxIs90Btd8vv3VyaiaWfscibykhibeUDmia1A3ZScmJQLzSP8JhtQ/0?wx_fmt=jpeg",
+        headimg: "https://images.weserv.nl/?url=http://wx.qlogo.cn/mmhead/Q3auHgzwzM6fKupht2mCdjP89118q8RicJWK8KHQOqsa5YN9Biceibiaicg/0",
+        name: "超元空间数字藏品",
       }
     }
   },
@@ -83,7 +83,7 @@ export default {
   .sub-title {
     display: flex;
     padding-bottom: 10px;
-    .description {
+    .desc {
       color: #909090;
       font-size: 12px;
       line-height: 15px;
@@ -92,11 +92,11 @@ export default {
       letter-spacing: -.15px;
     }
 
-    .image {
+    .cover {
       width: 44px;
       height: 44px;
       margin-top: 1px;
-      border: 1px solid #212121;
+      // border: 1px solid #212121;
       box-sizing: border-box;
       uni-image {
         width: 100%;
@@ -111,8 +111,7 @@ export default {
       transform: scaleY(0.5);
       display: block;
       height: 1px;
-      background: #f7f7f7;
-      // background: #212121;
+      background: #f5f5f5;
     }
   }
 
@@ -120,19 +119,18 @@ export default {
     display: flex;
     align-items: center;
     height: 20px;
-    .logo {
-      width: 9px;
-      height: 9px;
-      border: 1px solid #212121;
+    .headimg {
+      width: 10px;
+      height: 10px;
+      // border: 1px solid #212121;
       transform: translateY(-1px);
     }
-    .nickname {
+    .name {
       padding-left: 4px;
       color: #909090;
       font-size: 14px;
       transform: scale(0.72);
       transform-origin: left center;
-
     }
   }
 }

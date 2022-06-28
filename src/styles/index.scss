@@ -23,3 +23,9 @@ body {
 uni-view , uni-image{
   box-sizing: border-box;
 }
+
+// 手机状态栏高度
+.status_bar {
+  height: var(--status-bar-height);
+  width: 100%;
+}

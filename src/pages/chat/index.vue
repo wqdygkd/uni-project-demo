@@ -1,26 +1,16 @@
 <template>
   <view class="chat">
-      <view class="status-bar"></view>
-      <view class="top-bar" >
-          <view class="left" @click="goBack">
-            <image src="./../../static/arrow-left.svg"></image>
-          </view>
-        <view class="title">
-          <text>群聊</text>
-          <text>(2)</text>
-          <image src="./../../static/qiyeweixin.png"></image>
-        </view>
-        <view class="right">
-          <image src="./../../static/more.svg"></image>
-        </view>
-      </view>
-
+      <view class="status_bar"></view>
+      <TopBar :data="currentConversation"/>
       <Message class="messageBox" :class="{'hidden': hidden}"/>
       <SendBar class="send-bar"/>
       <view class="test" >
         <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image>
-        <image src="./1.jpg" mode="aspectFit"></image>
-        <image src="./2.jpg" mode="aspectFit"></image>
+        <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
+        <!-- <image src="./2.jpg" mode="aspectFit"></image> -->
+        <image src="./3.jpg" mode="aspectFit"></image>
+        <image src="./3.jpg" mode="aspectFit"></image>
+        <image src="./4.jpg" mode="aspectFit"></image>
         <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
       </view>
 
@@ -30,13 +20,21 @@
 </template>
 
 <script>
+import TopBar from './components/topbar/topbar'
 import Message from '@/components/message/message'
 import SendBar from '@/components/sendbar/sendbar'
+
+import { mapState , mapGetters} from 'vuex'
 export default {
 	components: {
+    TopBar,
 		Message,
     SendBar
 	},
+  computed: {
+    // ...mapState(['conversationList', 'activedConversationId', 'message']),
+    ...mapGetters(['currentConversation', 'currentConversationMsg'])
+  },
 	data() {
 		return {
       // statusBarHeight: 0,
@@ -66,8 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.status-bar {
-  height: var(--status-bar-height);
+.status_bar {
   background: #ededed;
   z-index: 100;
   position: relative;
@@ -83,9 +80,9 @@ export default {
     position: relative;
     height: 40px;
     width: 100%;
-    background: #ededed;
+    // background: #ededed;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,13 +100,19 @@ export default {
       left: 0;
     }
     .title {
-      transform: translate(-1.4px, 0.5px);
+      transform: translate(1.3px, 0.5px);
       color: #1d1d1d;
       display: flex;
       align-items: center;
+      .title-name {
+        letter-spacing: .44px;
+        display: inline-block;
+      }
       uni-image {
-        width: 23px;
-        height: 23px;
+        margin-left: 4px;
+        margin-top: 0.9px;
+        width: 18px;
+        height: 18px;
       }
     }
     .left {

@@ -39,29 +39,32 @@
 </template>
 
 <script>
-// import { uniIcons } from '@dcloudio/uni-ui'
+import { mapState} from 'vuex'
 export default {
   components: {
     // uniIcons
   },
+  computed: {
+    ...mapState(['conversationList'])
+  },
   data() {
     return {
       // 会话列表
-      conversationList: [
-        {
-          title: '群聊名称',
-          type: "groupchat", // 会话类型
-          groupMember: [
-            { userName: '', url: 'https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png'}
-          ],
-          from: { userName: '' }, // 发送人
-          time: '', // 时间
-          id: 1,
-          bySelf: false, // 是否是自己发送
-          messageType: 'text', // 消息类型
-          unreadNum: 100 // 未读数
-        }
-      ]
+      // conversationList: [
+      //   {
+      //     title: '开源数字艺术78群(174)',
+      //     type: "groupchat", // 会话类型
+      //     groupMember: [
+      //       { userName: '', url: 'https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png'}
+      //     ],
+      //     from: { userName: '' }, // 发送人
+      //     time: '',
+      //     id: 1,
+      //     bySelf: false, // 是否是自己发送
+      //     messageType: 'text', // 消息类型
+      //     // unreadNum: 100 // 未读数
+      //   }
+      // ]
     }
   },
   onLoad() {
@@ -79,11 +82,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.status_bar {
-  height: var(--status-bar-height);
-  width: 100%;
-}
+<style lang="scss" scoped>
 .title {
   width: 100%;
   text-align: center;
