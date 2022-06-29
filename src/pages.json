@@ -8,7 +8,7 @@
       "path": "pages/tab1/index",
       "style": {
         "navigationBarTitleText": "uni-app", //设置页面标题文字
-        "enablePullDownRefresh": true, //开启下拉刷新
+        "enablePullDownRefresh": false, //开启下拉刷新
         "h5": {
           "titleNView": false
         },
@@ -63,7 +63,8 @@
       "titleNView": false
     },
     "app-plus": {
-      "titleNView": false
+      "titleNView": false,
+      "bounce": "none"
     }
   },
   "easycom": {

@@ -1,21 +1,11 @@
 <template>
   <view class="chat">
       <view class="status_bar"></view>
-      <TopBar :data="currentConversation"/>
-      <Message class="messageBox" :class="{'hidden': hidden}"/>
+      <TopBar :data="activedConversation"/>
+      <Message class="message-box" :message-list="activedConversationMsg"/>
       <SendBar class="send-bar"/>
-      <view class="test" >
-        <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image>
-        <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
-        <!-- <image src="./2.jpg" mode="aspectFit"></image> -->
-        <image src="./3.jpg" mode="aspectFit"></image>
-        <image src="./3.jpg" mode="aspectFit"></image>
-        <image src="./4.jpg" mode="aspectFit"></image>
-        <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
-      </view>
 
-      <view @click="changeBg" class="change">切换背景</view>
-      <view @click="changeshow" class="changeshow">changeshow</view>
+      <Test />
     </view>
 </template>
 
@@ -23,41 +13,34 @@
 import TopBar from './components/topbar/topbar'
 import Message from '@/components/message/message'
 import SendBar from '@/components/sendbar/sendbar'
+import Test from '@/components/test/test'
 
-import { mapState , mapGetters} from 'vuex'
+import { mapState , mapGetters, mapMutations} from 'vuex'
 export default {
 	components: {
     TopBar,
 		Message,
-    SendBar
+    SendBar,
+    Test
 	},
   computed: {
-    // ...mapState(['conversationList', 'activedConversationId', 'message']),
-    ...mapGetters(['currentConversation', 'currentConversationMsg'])
+    ...mapGetters(['activedConversation', 'activedConversationMsg'])
   },
 	data() {
 		return {
-      // statusBarHeight: 0,
-
-      bg: 1,
       hidden: false
     }
 	},
-	onLoad(){
+	onLoad(options){
+    this.setActivedConversationId({id: +options.id})
     // #ifdef APP-PLUS
     // this.statusBarHeight = plus.navigator.getStatusbarHeight(); //状态栏高度
     // #endif
   },
 	methods: {
+    ...mapMutations(['setActivedConversationId']),
     goBack() {
       uni.navigateBack()
-    },
-
-    changeBg() {
-      this.bg = this.bg === 1 ? 2 : 1
-    },
-    changeshow() {
-      this.hidden = !this.hidden
     }
 	}
 }
@@ -75,102 +58,16 @@ export default {
   position: relative;
   overflow: hidden;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-
-  .top-bar {
-    position: relative;
-    height: 40px;
-    width: 100%;
-    // background: #ededed;
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 100;
-    &::before {
-      content: "";
-      transform: scaleY(0.5);
-      display: block;
-      height: 1px;
-      width: 100%;
-      // background: #212121;
-      background: #e5e5e5;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-    .title {
-      transform: translate(1.3px, 0.5px);
-      color: #1d1d1d;
-      display: flex;
-      align-items: center;
-      .title-name {
-        letter-spacing: .44px;
-        display: inline-block;
-      }
-      uni-image {
-        margin-left: 4px;
-        margin-top: 0.9px;
-        width: 18px;
-        height: 18px;
-      }
-    }
-    .left {
-      padding-left: 5px;
-      uni-image {
-        width: 25px;
-        height: 25px;
-      }
-    }
-    .right {
-      padding-right: 12.5px;
-      uni-image {
-        width: 25px;
-        height: 25px;
-        // transform: translate();
-        display: block;
-      }
-    }
+  display: flex;
+  flex-direction: column;
+  .message-box {
+    // height: calc(100% - );
+    flex: 1;
   }
-
   .send-bar {
-    position: absolute;
+    // position: absolute;
     bottom: 0;
-    display: none;
+    // display: none;
   }
-}
-
-.hidden {
-  display: none;
-  opacity: 0;
-}
-// 测试
-.test {
-  // display: none;
-  display: block;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0px;
-  // z-index: -1;
-  overflow: scroll;
-  uni-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-}
-
-.change {
-  position: absolute;
-  left: 100px;
-  top: 100px;
-  z-index: 200;
-}
-.changeshow {
-  position: absolute;
-  left: 100px;
-  top: 140px;
-  z-index: 200;
 }
 </style>

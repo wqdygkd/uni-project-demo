@@ -1,5 +1,5 @@
 <template>
-  <view class="top-bar" >
+  <view class="top-bar">
       <view class="left" @click="goBack">
         <image src="@/static/arrow-left.svg"></image>
       </view>
@@ -30,7 +30,7 @@ export default {
   methods: {
     goBack() {
       uni.navigateBack()
-    },
+    }
   }
 }
 </script>
@@ -39,7 +39,7 @@ export default {
   position: relative;
   height: 40px;
   width: 100%;
-  // background: #ededed;
+  background: #ededed;
   font-size: 14px;
   font-weight: 500;
   display: flex;

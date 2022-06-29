@@ -54,7 +54,8 @@ export default {
 <style lang="scss" scoped>
 .send-bar {
   transition: all 300ms;
-  z-index: 1000;
+  // z-index: 1000;
+  opacity: 0;
   // position: relative;
 
   // .title {
@@ -84,7 +85,7 @@ export default {
 }
 
 .send-bar-block {
-  height: 45px;
+  height: 48px;
   width: 100%;
   background: #f7f7f7;
   font-size: 14px;

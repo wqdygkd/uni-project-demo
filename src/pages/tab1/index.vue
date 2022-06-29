@@ -29,7 +29,7 @@
               badge-positon="left"
               :badge-text="item.unreadNum > 99 ? 'dot' : item.unreadNum"
               clickable
-              @click="toChat"
+              @click="toChat(item)"
             ></uni-list-chat>
           </block>
         </view>
@@ -39,13 +39,13 @@
 </template>
 
 <script>
-import { mapState} from 'vuex'
+import { mapMutations, mapState} from 'vuex'
 export default {
   components: {
     // uniIcons
   },
   computed: {
-    ...mapState(['conversationList'])
+    ...mapState(['conversationList']),
   },
   data() {
     return {
@@ -71,9 +71,9 @@ export default {
 
   },
   methods: {
-    toChat() {
+    toChat(item) {
       uni.navigateTo({
-        url: '/pages/chat/index',
+        url: `/pages/chat/index?id=${item.id}`,
         animationType: 'pop-in',
         animationDuration: 300
       })
