@@ -20,17 +20,17 @@
       <uni-list>
         <uni-list-item
           title="昵称"
-          thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+          thumb="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
           thumb-size="lg"
         ></uni-list-item>
         <uni-list-item
           title="昵称"
-          thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+          thumb="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
           thumb-size="lg"
         ></uni-list-item>
         <uni-list-item
           title="昵称"
-          thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+          thumb="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
           thumb-size="lg"
         ></uni-list-item>
       </uni-list>

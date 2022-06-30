@@ -1,7 +1,7 @@
 <template>
   <view class="chat">
       <view class="status_bar"></view>
-      <TopBar :data="activedConversation"/>
+      <TopBar :data="activedConversation" />
       <Message class="message-box" :message-list="activedConversationMsg"/>
       <SendBar class="send-bar"/>
 

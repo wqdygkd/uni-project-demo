@@ -1,7 +1,7 @@
 <template>
   <view>
     <view class="test" >
-        <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image>
+        <!-- <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image> -->
         <image src="./1.jpg" mode="aspectFit"></image>
         <!-- <image src="./2.jpg" mode="aspectFit"></image> -->
         <image src="./3.jpg" mode="aspectFit"></image>

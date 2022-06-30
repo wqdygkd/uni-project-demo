@@ -20,7 +20,8 @@
     { "path": "pages/tab2/index" },
     { "path": "pages/tab3/index" },
     { "path": "pages/tab4/index" },
-    { "path": "pages/chat/index" }
+    { "path": "pages/chat/index" },
+    { "path": "pages/chat/info" }
   ],
   "tabBar": {
     "color": "#7A7E83",
@@ -44,13 +45,13 @@
         "pagePath": "pages/tab3/index",
         "iconPath": "static/logo.png",
         "selectedIconPath": "static/logo.png",
-        "text": "通讯录"
+        "text": "发现"
       },
       {
         "pagePath": "pages/tab4/index",
         "iconPath": "static/logo.png",
         "selectedIconPath": "static/logo.png",
-        "text": "通讯录"
+        "text": "我"
       }
     ]
   },
