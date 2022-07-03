@@ -12,11 +12,11 @@ export default {
 <style lang="scss" scoped>
 .paipai {
   text-align: center;
-  font-size: 12px;
+  font-size: 25rpx;
   color: #726e71;
   // background: #fff;
-  transform: scale(0.97);
+  transform: scale(0.95);
   font-weight: 500;
-  padding: 11.7px 0 10px;
+  padding: 11px 0 10px;
 }
 </style>

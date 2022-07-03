@@ -1,13 +1,13 @@
 <template>
   <view>
-    <image :src="avatarUrl"></image>
+    <image :src="userAvatar"></image>
   </view>
 </template>
 
 <script>
 export default {
   props: {
-    avatarUrl: {
+    userAvatar: {
       type: String,
       default: 'https://xspace-img-cn.alicdn.com/consult/f109dfe0-d437-42a8-bdb9-526e5cae11ab.png'
     }

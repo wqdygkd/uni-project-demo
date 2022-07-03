@@ -2,7 +2,7 @@
   <view class="chat">
       <view class="status_bar"></view>
       <TopBar :data="activedConversation" />
-      <Message class="message-box" :message-list="activedConversationMsg"/>
+      <Message class="message-box" :message-list="activedConversationMsg" />
       <SendBar class="send-bar"/>
 
       <Test />
@@ -47,11 +47,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.status_bar {
-  background: #ededed;
-  z-index: 100;
-  position: relative;
-}
 .chat {
   height: 100vh;
   background: #ededed;

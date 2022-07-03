@@ -1,8 +1,8 @@
 <template>
-  <div class="text" :class="{'self': msg.bySelf}">
+  <view class="text" :class="{'self': msg.bySelf}">
     {{ msg.text }}
     <!-- V<text style="transform: scale(0.3);"> </text> -->
-  </div>
+  </view>
 </template>
 
 <script>

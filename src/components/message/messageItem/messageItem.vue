@@ -7,13 +7,12 @@
       <Paipai />
     </block>
     <div class="has-avatar" :class="{'right': msg.bySelf}" v-else>
-      <Avatar class="avatar" />
+      <Avatar class="avatar" :user-avatar="userAvatar" />
       <view class="message-item-content">
         <view class="user-name" v-if="!msg.bySelf">{{msg.from.userName}}</view>
         <div>
-          <!-- <TextMessage  :msg="msg"   /> -->
           <component :is="msg.type" :msg="msg" />
-          <div :class="{'arrow-left': !msg.bySelf, 'arrow-right': msg.bySelf, 'bg-white': msg.type === 'OffiaccountPageShare'}"></div>
+          <div v-if="!['ImageMessage'].includes(msg.type)" :class="{'arrow-left': !msg.bySelf, 'arrow-right': msg.bySelf, 'bg-white': msg.type === 'OffiaccountPageShare'}"></div>
         </div>
       </view>
     </div>
@@ -40,13 +39,17 @@ import OffiaccountPageShare from './messageType/offiaccountPageShare'
 import Time from './messageType/time'
 import Paipai from './messageType/paipai'
 import TextMessage from './messageType/textMessage'
+import ImageMessage from './messageType/imageMessage'
 import Avatar from '@/components/avatar/avatar'
+
+import {  mapGetters } from 'vuex'
 export default {
 	components: {
 		OffiaccountPageShare,
     Time,
     Paipai,
     TextMessage,
+    ImageMessage,
     Avatar
 	},
   props: {
@@ -57,6 +60,12 @@ export default {
     msg: {
       type: Object,
       default: () => {}
+    }
+  },
+  computed: {
+    ...mapGetters(['userInfo']),
+    userAvatar() {
+      return this.msg.bySelf ? this.userInfo.userAvatar : this.msg.from.userAvatar
     }
   },
 	data() {
@@ -73,10 +82,10 @@ export default {
   // margin-bottom: 20px;
   .has-avatar {
     display: flex;
-    padding: 0 6px;
+    padding: 0 5.5px;
     .message-item-content {
       position: relative;
-      padding: 5.3px 0 5.3px 5.5px;
+      padding: 5.8px 4.5px 4.5px 5.3px;
       // margin-top: 5px;
       // background: #fff;
       .arrow {
@@ -110,14 +119,13 @@ export default {
       .user-name {
         font-size: 10px;
         color: #999;
-        margin-bottom: 2px;
+        line-height: 16px;
+        // margin-bottom: 2px;
       }
     }
     .avatar {
-      // margin-right: 4.2px;
-      padding: 5px;
+      padding: 5.7px 5px;
       // background: #fff;
-      // margin-top: 10px;
     }
     &.right {
       justify-content: right;
@@ -126,8 +134,6 @@ export default {
       }
       .avatar {
         order: 2;
-        margin-right: 0;
-        margin-left: 4.2px;
       }
     }
   }

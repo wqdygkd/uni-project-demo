@@ -37,7 +37,7 @@ export default {
 <style lang="scss" scoped>
 .top-bar {
   position: relative;
-  height: 40px;
+  height: 83rpx;
   width: 100%;
   background: #ededed;
   font-size: 14px;
@@ -45,6 +45,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
   z-index: 100;
   &::before {
     content: "";

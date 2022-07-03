@@ -4,8 +4,8 @@
         <!-- <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image> -->
         <image src="./1.jpg" mode="aspectFit"></image>
         <!-- <image src="./2.jpg" mode="aspectFit"></image> -->
-        <image src="./3.jpg" mode="aspectFit"></image>
-        <image src="./4.jpg" mode="aspectFit"></image>
+        <image src="./10.jpg" mode="widthFix"></image>
+        <image src="./11.jpg" mode="widthFix"></image>
         <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
       </view>
 

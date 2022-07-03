@@ -18,11 +18,11 @@ export default {
 <style lang="scss" scoped>
 .time {
   text-align: center;
-  font-size: 14px;
+  font-size: 30rpx;
   color: #999;
   // background: #fff;
-  transform: translateY(1px) scale(0.7);
-  font-weight: 500;
-  padding: 8.5px 0;
+  transform: translateY(1rpx) scale(0.7);
+  font-weight: 400;
+  padding: 18rpx 0;
 }
 </style>

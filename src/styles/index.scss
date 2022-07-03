@@ -17,10 +17,11 @@ uni-image {
 }
 
 body {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-uni-view , uni-image{
+uni-view,
+uni-image {
   box-sizing: border-box;
 }
 
@@ -28,4 +29,6 @@ uni-view , uni-image{
 .status_bar {
   height: var(--status-bar-height);
   width: 100%;
+  background: #ededed;
+  z-index: 100;
 }
