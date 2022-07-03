@@ -1,6 +1,4 @@
-
-
-const uniRequest = (option) => {
+const uniRequest = option => {
   return new Promise((resolve, reject) => {
     uni.request({
       ...option,
@@ -9,6 +7,5 @@ const uniRequest = (option) => {
     })
   })
 }
-
 
 // export function get()

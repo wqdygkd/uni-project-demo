@@ -1,23 +1,23 @@
 <script>
-import {mapMutations} from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
   methods: {
     ...mapMutations(['updateSystemInfo'])
   },
-  onLaunch: function() {
+  onLaunch () {
     console.log('App Launch')
     uni.getSystemInfo({
-        success: res => {
-          this.updateSystemInfo(res)
-          console.log(res.screenHeight * (750 / res.windowWidth))
-        }
+      success: res => {
+        this.updateSystemInfo(res)
+        console.log(res.screenHeight * (750 / res.windowWidth))
+      }
     })
   },
-  onShow: function() {
+  onShow () {
     console.log('App Show')
   },
-  onHide: function() {
+  onHide () {
     console.log('App Hide')
   }
 }

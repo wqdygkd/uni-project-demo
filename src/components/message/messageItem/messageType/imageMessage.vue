@@ -1,12 +1,12 @@
 <template>
   <div class="image-message" :class="{'self': msg.bySelf}">
-    <image :style="style" mode="aspectFill" :src="imgUrl" ></image>
+    <image :style="style" mode="aspectFill" :src="imgUrl" />
   </div>
 </template>
 
 <script>
 // 图片消息
-import { mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   name: 'ImageMessage',
   props: {
@@ -18,9 +18,9 @@ export default {
 
   computed: {
     ...mapGetters(['systemInfo']),
-    style() {
-      let {imgUrl, width, height} = this.msg
-      let { windowWidth, devicePixelRatio} = this.systemInfo
+    style () {
+      let { width, height } = this.msg
+      const { windowWidth, devicePixelRatio } = this.systemInfo
       // 屏幕 1080*2400
       // 原图 1080/2400=0.45  182/405= 0.4493
       // 原图 1500/4872=0.3078  182/457=0.3982
@@ -28,9 +28,9 @@ export default {
       // 原图 640/640=1  366/366=1
       // 原图 800/1599=0.5  183/366=0.5
 
-      let ratio = width / height
+      const ratio = width / height
 
-      if (0.5 <= ratio && ratio <= 1) {
+      if (ratio >= 0.5 && ratio <= 1) {
         if (height > 368) {
           height = 368 * (750 / windowWidth) / devicePixelRatio
           // height = 368 / devicePixelRatio
@@ -43,7 +43,7 @@ export default {
 
       return `width: ${width}rpx; height: ${height}rpx`
     },
-    imgUrl() {
+    imgUrl () {
       return this.msg.imgUrl
     }
   }

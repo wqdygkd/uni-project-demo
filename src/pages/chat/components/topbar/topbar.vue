@@ -1,15 +1,19 @@
 <template>
   <view class="top-bar">
-      <view class="left" @click="goBack">
-        <image src="@/static/arrow-left.svg"></image>
-      </view>
+    <view class="left" @click="goBack">
+      <image src="@/static/arrow-left.svg" />
+    </view>
     <view class="title">
-      <view class="title-name">{{data.title}}</view>
-      <text v-if="data.type === 'groupchat'">({{data.groupMemberCount}})</text>
-      <image v-if="data.weCom" src="@/static/qiyeweixin.png"></image>
+      <view class="title-name">
+        {{ data.title }}
+      </view>
+      <text v-if="data.type === 'groupchat'">
+        ({{ data.groupMemberCount }})
+      </text>
+      <image v-if="data.weCom" src="@/static/qiyeweixin.png" />
     </view>
     <view class="right">
-      <image src="@/static/more.svg"></image>
+      <image src="@/static/more.svg" />
     </view>
   </view>
 </template>
@@ -22,13 +26,13 @@ export default {
       default: () => {}
     }
   },
-  data() {
+  data () {
     return {
     }
   },
 
   methods: {
-    goBack() {
+    goBack () {
       uni.navigateBack()
     }
   }
@@ -93,4 +97,3 @@ export default {
   }
 }
 </style>
-

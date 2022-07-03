@@ -1,5 +1,7 @@
 <template>
-  <view class="time">{{time}}</view>
+  <view class="time">
+    {{ time }}
+  </view>
 </template>
 
 <script>

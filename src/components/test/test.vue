@@ -1,38 +1,38 @@
 <template>
   <view>
-    <view class="test" >
-        <!-- <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image> -->
-        <image src="./1.jpg" mode="aspectFit"></image>
-        <!-- <image src="./2.jpg" mode="aspectFit"></image> -->
-        <image src="./10.jpg" mode="widthFix"></image>
-        <image src="./11.jpg" mode="widthFix"></image>
-        <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
-      </view>
+    <view class="test">
+      <!-- <image :src="'./' + bg + '.jpg'" mode="aspectFit"></image> -->
+      <image src="./1.jpg" mode="aspectFit" />
+      <!-- <image src="./2.jpg" mode="aspectFit"></image> -->
+      <image src="./10.jpg" mode="widthFix" />
+      <image src="./11.jpg" mode="widthFix" />
+      <!-- <image src="./1.jpg" mode="aspectFit"></image> -->
+    </view>
 
-      <!-- <view @click="changeBg" class="change">切换背景</view> -->
-      <!-- <view @click="changeshow" class="changeshow">changeshow</view> -->
+    <!-- <view @click="changeBg" class="change">切换背景</view> -->
+    <!-- <view @click="changeshow" class="changeshow">changeshow</view> -->
   </view>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        // statusBarHeight: 0,
+export default {
+  data () {
+    return {
+      // statusBarHeight: 0,
 
-        bg: 1,
-      }
-    },
-    methods: {
-    changeBg() {
+      bg: 1
+    }
+  },
+  methods: {
+    changeBg () {
       this.bg = this.bg === 1 ? 2 : 1
     },
-    changeshow() {
+    changeshow () {
       console.log(11)
-      this.$emit('show', !this.hidden )
+      this.$emit('show', !this.hidden)
     }
-	}
   }
+}
 </script>
 
 <style lang="scss" scoped>

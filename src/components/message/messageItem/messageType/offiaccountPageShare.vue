@@ -1,20 +1,25 @@
 <template>
   <view class="offiaccount-page-share">
-    <view class="title line-2">{{detail.title}}</view>
+    <view class="title line-2">
+      {{ detail.title }}
+    </view>
     <view class="sub-title">
-      <view class="desc line-3">{{detail.desc}}</view>
+      <view class="desc line-3">
+        {{ detail.desc }}
+      </view>
       <view class="cover">
-        <image :src="detail.cover" alt="" mode="aspectFill">
+        <image :src="detail.cover" alt="" mode="aspectFill" />
       </view>
     </view>
 
-    <view class="separator"></view>
+    <view class="separator" />
 
     <view class="footer">
       <image class="headimg" :src="detail.headimg" alt="">
-      <view class="name">
-        {{detail.name}}
-      </view>
+        <view class="name">
+          {{ detail.name }}
+        </view>
+      </image>
     </view>
   </view>
 </template>
@@ -29,21 +34,21 @@ export default {
       default: () => {}
     }
   },
-  data() {
+  data () {
     return {
       loading: false,
       detail: {
-        title: "超元空间 | 嗨",
-        desc: "超元空间嗨",
-        cover: "https://images.weserv.nl/?url=https://mmbiz.qlogo.cn/mmbiz_jpg/UIgW2nYmoibEv8SaLH8RQ0UY3DvN9CnNEmzqibHsxIs90Btd8vv3VyaiaWfscibykhibeUDmia1A3ZScmJQLzSP8JhtQ/0?wx_fmt=jpeg",
-        headimg: "https://images.weserv.nl/?url=http://wx.qlogo.cn/mmhead/Q3auHgzwzM6fKupht2mCdjP89118q8RicJWK8KHQOqsa5YN9Biceibiaicg/0",
-        name: "超元空间数字藏品",
+        title: '平台首测 | 唯美艺术平台一大波注册福利来袭',
+        desc: '唯美art——数字收藏着服务平台',
+        cover: 'https://images.weserv.nl/?url=https://mmbiz.qlogo.cn/mmbiz_jpg/UIgW2nYmoibEv8SaLH8RQ0UY3DvN9CnNEmzqibHsxIs90Btd8vv3VyaiaWfscibykhibeUDmia1A3ZScmJQLzSP8JhtQ/0?wx_fmt=jpeg',
+        headimg: 'https://images.weserv.nl/?url=http://wx.qlogo.cn/mmhead/Q3auHgzwzM6fKupht2mCdjP89118q8RicJWK8KHQOqsa5YN9Biceibiaicg/0',
+        name: '唯美艺术服务'
       }
     }
   },
   watch: {
     'msg.article': {
-      async handler(newVal, oldVal) {
+      async handler (newVal) {
         this.loading = true
         // await this.getArticleDetail(newVal)
         this.loading = false
@@ -52,13 +57,13 @@ export default {
     }
   },
   methods: {
-    getArticleDetail(url) {
+    getArticleDetail (url) {
       uni.request({
         url: `http://localhost:3000/api/weixin?url=${url}`,
-        success: (res) => {
+        success: res => {
           console.log(res)
         }
-      });
+      })
     }
   }
 }

@@ -5,19 +5,21 @@
     </view>
     <view class="top-bar">
       <uni-nav-bar>
-        <view class="title">微信</view>
+        <view class="title">
+          微信
+        </view>
         <block slot="right">
           <view class="right">
-            <uni-icons class="search" type="search" size="30"></uni-icons>
+            <uni-icons class="search" type="search" size="30" />
             <text>
-              <uni-icons class="action" type="plus" size="30"></uni-icons>
+              <uni-icons class="action" type="plus" size="30" />
             </text>
           </view>
         </block>
       </uni-nav-bar>
     </view>
     <view>
-      <uni-list :border="true" >
+      <uni-list :border="true">
         <view v-for="item in conversationList" :key="item.id">
           <!-- 头像显示角标 -->
           <block v-if="item.type === 'groupchat'">
@@ -30,7 +32,7 @@
               :badge-text="item.unreadNum > 99 ? 'dot' : item.unreadNum"
               clickable
               @click="toChat(item)"
-            ></uni-list-chat>
+            />
           </block>
         </view>
       </uni-list>
@@ -39,39 +41,23 @@
 </template>
 
 <script>
-import { mapMutations, mapState} from 'vuex'
+import { mapState } from 'vuex'
 export default {
   components: {
     // uniIcons
   },
+
+  data () {
+    return {}
+  },
   computed: {
-    ...mapState(['conversationList']),
+    ...mapState(['conversationList'])
   },
-  data() {
-    return {
-      // 会话列表
-      // conversationList: [
-      //   {
-      //     title: '开源数字艺术78群(174)',
-      //     type: "groupchat", // 会话类型
-      //     groupMember: [
-      //       { userName: '', url: 'https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png'}
-      //     ],
-      //     from: { userName: '' }, // 发送人
-      //     time: '',
-      //     id: 1,
-      //     bySelf: false, // 是否是自己发送
-      //     messageType: 'text', // 消息类型
-      //     // unreadNum: 100 // 未读数
-      //   }
-      // ]
-    }
-  },
-  onLoad() {
+  onLoad () {
 
   },
   methods: {
-    toChat(item) {
+    toChat (item) {
       uni.navigateTo({
         url: `/pages/chat/index?id=${item.id}`,
         animationType: 'pop-in',

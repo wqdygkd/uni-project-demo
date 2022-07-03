@@ -1,12 +1,12 @@
 <template>
   <view class="chat">
-      <view class="status_bar"></view>
-      <TopBar :data="activedConversation" />
-      <Message class="message-box" :message-list="activedConversationMsg" />
-      <SendBar class="send-bar"/>
+    <view class="status_bar" />
+    <TopBar :data="activedConversation" />
+    <Message class="message-box" :message-list="activedConversationMsg" />
+    <SendBar class="send-bar" />
 
-      <Test />
-    </view>
+    <Test />
+  </view>
 </template>
 
 <script>
@@ -15,34 +15,34 @@ import Message from '@/components/message/message'
 import SendBar from '@/components/sendbar/sendbar'
 import Test from '@/components/test/test'
 
-import { mapState , mapGetters, mapMutations} from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 export default {
-	components: {
+  components: {
     TopBar,
-		Message,
+    Message,
     SendBar,
     Test
-	},
+  },
+  data () {
+    return {
+      hidden: false
+    }
+  },
   computed: {
     ...mapGetters(['activedConversation', 'activedConversationMsg'])
   },
-	data() {
-		return {
-      hidden: false
-    }
-	},
-	onLoad(options){
-    this.setActivedConversationId({id: +options.id})
+  onLoad (options) {
+    this.setActivedConversationId({ id: +options.id })
     // #ifdef APP-PLUS
     // this.statusBarHeight = plus.navigator.getStatusbarHeight(); //状态栏高度
     // #endif
   },
-	methods: {
+  methods: {
     ...mapMutations(['setActivedConversationId']),
-    goBack() {
+    goBack () {
       uni.navigateBack()
     }
-	}
+  }
 }
 </script>
 

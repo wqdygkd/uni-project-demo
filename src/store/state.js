@@ -3,7 +3,7 @@ const state = {
   conversationList: [
     {
       title: '开源数字艺术78群',
-      type: "groupchat",
+      type: 'groupchat',
       groupMember: [
         { userName: '', userAvatar: 'https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png' }
       ],
@@ -18,7 +18,7 @@ const state = {
     },
     {
       title: '开源数字艺术79群',
-      type: "groupchat",
+      type: 'groupchat',
       groupMember: [
         { userName: '', userAvatar: 'https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png' }
       ],
@@ -113,12 +113,12 @@ const state = {
         type: 'OffiaccountPageShare',
         bySelf: true,
         id: 9
-      },
+      }
     ],
     2: [
       { type: 'time', time: '4月24日 下午16:33', id: 1 },
       { type: 'paipai', id: 1 },
-      { type: 'TextMessage', text: 'hahahahaha', bySelf: true, id: 3 },
+      { type: 'TextMessage', text: 'hahahahaha', bySelf: true, id: 3 }
     ]
   },
 
@@ -132,7 +132,7 @@ const state = {
   },
 
   activedConversationId: 1, //
-  systemInfo: {},
+  systemInfo: {}
 }
 
 export default state

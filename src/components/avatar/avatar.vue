@@ -1,6 +1,6 @@
 <template>
   <view>
-    <image :src="userAvatar"></image>
+    <image :src="userAvatar" />
   </view>
 </template>
 

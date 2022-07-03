@@ -5,12 +5,14 @@
     </view>
     <view class="top-bar">
       <uni-nav-bar>
-        <view class="title">发现</view>
+        <view class="title">
+          发现
+        </view>
         <block slot="right">
           <view class="right">
-            <uni-icons class="search" type="search" size="30"></uni-icons>
+            <uni-icons class="search" type="search" size="30" />
             <text>
-              <uni-icons class="action" type="plus" size="30"></uni-icons>
+              <uni-icons class="action" type="plus" size="30" />
             </text>
           </view>
         </block>
@@ -22,12 +24,12 @@
 <script>
 export default {
   components: {},
-  data() {
+  data () {
     return {
       title: 'Hello'
     }
   },
-  onLoad() {
+  onLoad () {
 
   },
   methods: {

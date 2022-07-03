@@ -1,26 +1,26 @@
 <template>
-    <div>
-        <slot name="left">
-        <h3>{{title}}</h3>
-        <slot name="right">
-    </div>
+  <div>
+    <slot name="left">
+      <h3>{{ title }}</h3>
+      <slot name="right" />
+    </slot>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'TopBar',
-    props: {
-        title: {
-            type: String,
-            default: '通讯录'
-        }
-    },
+  name: 'TopBar',
+  props: {
+    title: {
+      type: String,
+      default: '通讯录'
+    }
+  },
 
-    data() {
-        return {
-        }
-    },
-
+  data () {
+    return {
+    }
+  }
 
 }
 </script>

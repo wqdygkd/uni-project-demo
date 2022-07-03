@@ -1,5 +1,7 @@
 <template>
-  <view class="paipai">我拍了拍自己</view>
+  <view class="paipai">
+    我拍了拍自己
+  </view>
 </template>
 
 <script>

@@ -1,9 +1,9 @@
 const mutations = {
-  setActivedConversationId(state, payload) {
+  setActivedConversationId (state, payload) {
     state.activedConversationId = payload.id
   },
 
-  updateSystemInfo(state, payload) {
+  updateSystemInfo (state, payload) {
     state.systemInfo = payload
   }
 }

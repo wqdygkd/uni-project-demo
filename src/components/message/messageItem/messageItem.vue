@@ -6,13 +6,15 @@
     <block v-else-if="type === 'paipai'">
       <Paipai />
     </block>
-    <div class="has-avatar" :class="{'right': msg.bySelf}" v-else>
+    <div v-else class="has-avatar" :class="{'right': msg.bySelf}">
       <Avatar class="avatar" :user-avatar="userAvatar" />
       <view class="message-item-content">
-        <view class="user-name" v-if="!msg.bySelf">{{msg.from.userName}}</view>
+        <view v-if="!msg.bySelf" class="user-name">
+          {{ msg.from.userName }}
+        </view>
         <div>
           <component :is="msg.type" :msg="msg" />
-          <div v-if="!['ImageMessage'].includes(msg.type)" :class="{'arrow-left': !msg.bySelf, 'arrow-right': msg.bySelf, 'bg-white': msg.type === 'OffiaccountPageShare'}"></div>
+          <div v-if="!['ImageMessage'].includes(msg.type)" :class="{'arrow-left': !msg.bySelf, 'arrow-right': msg.bySelf, 'bg-white': msg.type === 'OffiaccountPageShare'}" />
         </div>
       </view>
     </div>
@@ -42,16 +44,16 @@ import TextMessage from './messageType/textMessage'
 import ImageMessage from './messageType/imageMessage'
 import Avatar from '@/components/avatar/avatar'
 
-import {  mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
-	components: {
-		OffiaccountPageShare,
+  components: {
+    OffiaccountPageShare,
     Time,
     Paipai,
     TextMessage,
     ImageMessage,
     Avatar
-	},
+  },
   props: {
     type: {
       type: String,
@@ -62,17 +64,17 @@ export default {
       default: () => {}
     }
   },
-  computed: {
-    ...mapGetters(['userInfo']),
-    userAvatar() {
-      return this.msg.bySelf ? this.userInfo.userAvatar : this.msg.from.userAvatar
+  data () {
+    return {
+
     }
   },
-	data() {
-		return {
-
-		}
-	}
+  computed: {
+    ...mapGetters(['userInfo']),
+    userAvatar () {
+      return this.msg.bySelf ? this.userInfo.userAvatar : this.msg.from.userAvatar
+    }
+  }
 }
 </script>
 

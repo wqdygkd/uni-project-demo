@@ -1,17 +1,23 @@
 <template>
-  <view class="send-bar" ref="sendBar">
+  <view ref="sendBar" class="send-bar">
     <div class="send-bar-block">
       <view class="left icon-box">
-        <image src="./../../static/arrow-left.svg"></image>
+        <image src="./../../static/arrow-left.svg" />
       </view>
       <view class="input">
-        <textarea auto-height :adjust-position="false" v-model="message" @focus="onfocus" @blur="onblur"/>
+        <textarea
+          v-model="message"
+          auto-height
+          :adjust-position="false"
+          @focus="onfocus"
+          @blur="onblur"
+        />
       </view>
       <view class="right icon-box">
-        <image src="./../../static/more.svg"></image>
+        <image src="./../../static/more.svg" />
       </view>
       <view class="right icon-box">
-        <image src="./../../static/more.svg"></image>
+        <image src="./../../static/more.svg" />
       </view>
     </div>
   </view>
@@ -19,33 +25,33 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       message: '哈哈哈'
     }
   },
 
   methods: {
-    onfocus(e) {
-      let {height} = e.detail
-      console.log(e.detail )
-      const query = uni.createSelectorQuery().in(this);
+    onfocus (e) {
+      const { height } = e.detail
+      console.log(e.detail)
+      const query = uni.createSelectorQuery().in(this)
       // query.select('.send-bar').style.bottom = '400px'
       query.select('.send-bar').boundingClientRect(data => {
         // console.log("得到布局位置信息" + JSON.stringify(data));
         // console.log("节点离页面顶部的距离为" + data.top);
         console.log(Object.keys(uni.createSelectorQuery().select('.send-bar')))
-      }).exec();
+      }).exec()
 
-    //   uni.createSelectorQuery().select(".sticke").boundingClientRect((res)=>{
-    //     uni.createSelectorQuery().select(".sticke").style.transform
+      //   uni.createSelectorQuery().select(".sticke").boundingClientRect((res)=>{
+      //     uni.createSelectorQuery().select(".sticke").style.transform
 
-    // }).exec()
+      // }).exec()
 
       // console.log(this.$refs.sendBar.$el.style.bottom = '400px')
     },
 
-    onblur(e) {
+    onblur (e) {
       this.$refs.sendBar.$el.style.bottom = '0'
     }
   }
@@ -122,4 +128,3 @@ export default {
   }
 }
 </style>
-

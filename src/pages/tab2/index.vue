@@ -5,12 +5,14 @@
     </view>
     <view class="top-bar">
       <uni-nav-bar>
-        <view class="title">通讯录</view>
+        <view class="title">
+          通讯录
+        </view>
         <block slot="right">
           <view class="right">
-            <uni-icons class="search" type="search" size="30"></uni-icons>
+            <uni-icons class="search" type="search" size="30" />
             <text>
-              <uni-icons class="action" type="plus" size="30"></uni-icons>
+              <uni-icons class="action" type="plus" size="30" />
             </text>
           </view>
         </block>
@@ -22,34 +24,33 @@
           title="昵称"
           thumb="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
           thumb-size="lg"
-        ></uni-list-item>
+        />
         <uni-list-item
           title="昵称"
           thumb="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
           thumb-size="lg"
-        ></uni-list-item>
+        />
         <uni-list-item
           title="昵称"
           thumb="https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png"
           thumb-size="lg"
-        ></uni-list-item>
+        />
       </uni-list>
     </view>
   </view>
 </template>
 
 <script>
-// import { uniIcons } from '@dcloudio/uni-ui'
 export default {
   components: {
     // uniIcons
   },
-  data() {
+  data () {
     return {
       title: 'Hello'
     }
   },
-  onLoad() {
+  onLoad () {
 
   },
   methods: {
