@@ -7,10 +7,10 @@
       <Paipai />
     </block>
     <div v-else class="has-avatar" :class="{'right': msg.bySelf}">
-      <Avatar class="avatar" :user-avatar="userAvatar" />
+      <Avatar class="avatar" :user-avatar="msgUserInfo.userAvatar" />
       <view class="message-item-content">
         <view v-if="!msg.bySelf" class="user-name">
-          {{ msg.from.userName }}
+          {{ msgUserInfo.userName }}
         </view>
         <div>
           <component :is="msg.type" :msg="msg" />
@@ -70,9 +70,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['userInfo']),
-    userAvatar () {
-      return this.msg.bySelf ? this.userInfo.userAvatar : this.msg.from.userAvatar
+    ...mapGetters(['userInfo', 'contacts']),
+    msgUserInfo () {
+      return this.msg.bySelf ? this.userInfo : this.contacts.find(item => item.id === this.msg.from) || {}
     }
   }
 }
@@ -103,7 +103,7 @@ export default {
         border-left: 7px solid #95eb6c;
         border-right: 7px solid transparent;
         border-right-width: 0;
-        right: -4px;
+        right: 0;
         &.bg-white {
           border-left-color: #fff;
         }
@@ -111,10 +111,10 @@ export default {
 
       .arrow-left {
         @extend .arrow;
-        border-right: 3px solid #fff;
-        border-left: 3px solid transparent;
+        border-right: 7px solid #fff;
+        border-left: 7px solid transparent;
         border-left-width: 0;
-        left: -3px;
+        left: 0;
         top: 30px;
       }
 
