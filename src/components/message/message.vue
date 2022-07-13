@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .message {
   position: relative;
-  z-index: 100;
+  // z-index: 100;
   overflow-x: scroll;
 }
 </style>

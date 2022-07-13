@@ -1,11 +1,10 @@
 <template>
   <view class="chat">
+    <Test />
     <view class="status_bar" />
     <TopBar :data="activedConversation" />
     <Message class="message-box" :message-list="activedConversationMsg" />
-    <SendBar class="send-bar" />
-
-    <Test />
+    <!-- <SendBar class="send-bar" /> -->
   </view>
 </template>
 
@@ -56,8 +55,8 @@ export default {
   display: flex;
   flex-direction: column;
   .message-box {
-    // height: calc(100% - );
-    flex: 1;
+    height: calc(100% - 117px);
+    // flex: 1;
   }
   .send-bar {
     // position: absolute;

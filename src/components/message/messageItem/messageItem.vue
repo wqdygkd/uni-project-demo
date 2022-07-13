@@ -70,9 +70,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['userInfo', 'contacts']),
+    ...mapGetters(['userId', 'contacts']),
     msgUserInfo () {
-      return this.msg.bySelf ? this.userInfo : this.contacts.find(item => item.id === this.msg.from) || {}
+      const userId = this.msg.bySelf ? this.userId : this.msg.from
+      return this.contacts.find(item => item.id === userId) || {}
     }
   }
 }

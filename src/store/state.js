@@ -5,9 +5,10 @@ const state = {
       title: '开源数字艺术78群',
       type: 'groupchat',
       groupMember: [
-        { userName: '', userAvatar: 'https://static.okx.com/cdn/assets/imgs/221/F1B0C71EFA832CA3.png' }
+        { id: 2 },
+        { id: 1, self: true }
       ],
-      groupMemberCount: 174, //
+      groupMemberCount: 174,
       // from: { userName: '' },
       time: '',
       id: 1,
@@ -169,12 +170,8 @@ const state = {
     }
   ],
 
-  // 用户信息
-  userInfo: {
-    id: 1,
-    userName: '',
-    userAvatar: 'https://xspace-img-cn.alicdn.com/consult/0a1b7c66-b0e3-4046-b2d1-b3453585946a.png'
-  },
+  // 用户
+  userId: 1,
 
   activedConversationId: 1, //
   systemInfo: {}
