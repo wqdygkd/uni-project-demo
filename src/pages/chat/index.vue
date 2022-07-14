@@ -11,7 +11,7 @@
 <script>
 import TopBar from './components/topbar/topbar'
 import Message from '@/components/message/message'
-import SendBar from '@/components/sendbar/sendbar'
+// import SendBar from '@/components/sendbar/sendbar'
 import Test from '@/components/test/test'
 
 import { mapGetters, mapMutations } from 'vuex'
@@ -19,7 +19,7 @@ export default {
   components: {
     TopBar,
     Message,
-    SendBar,
+    // SendBar,
     Test
   },
   data () {
