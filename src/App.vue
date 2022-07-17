@@ -24,6 +24,6 @@ export default {
 </script>
 
 <style lang="scss">
-/*每个页面公共css */
-@import "./styles/index.scss";
+@import "./static/styles/index.scss";
+@import "./static/iconfont/iconfont.css";
 </style>

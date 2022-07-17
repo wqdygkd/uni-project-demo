@@ -24,7 +24,7 @@ export default {
   display: block;
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: absolute !important;
   top: 0px;
   // z-index: -1;
   overflow: scroll;

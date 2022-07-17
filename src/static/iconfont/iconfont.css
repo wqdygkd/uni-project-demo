@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3527683 */
+  /* Color fonts */
+  src: 
+       url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAR8AAwAAAAACKQAAAQvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAImAjJgZgADwKiUyGRAE2AiQDKAsmAAQgBYF8ByAbIwYRlZsa2Y/CuJk+/kVUcRxicWhmBir1rY9N9AiyYZvdu6+F5krVqCosGNOERCNkFwaEIm8REoxqCuFpADk1hcf/ph5UjUdqQs2cVIVUp5pMjM2BpKZTs083/udyej9KL/AT7wUUeEJjDVpjUxgWaJbtBTKmBhawZnA5Z1VYVP04Ei0McWgSoZDUUKXQiKCJhlZg1dYR4OdaR0/qAwaOIUYBjGES2lXQ3Es/P/5vQVOEd28xkOHFXatEuPoj+hBFqBXi7uS07MQZ4CzvJa4FRiBKFmMLz3NzkuEE2P821eSinBRgk4CUn8C6Bt9L+PO/aJlb/P2XOauQuw2iCHKEWXxpmQGT8afYsI014pR4BdTVNxVycSkJqSVIDdEHTf9ZY6StpaUpukzHo5nTtN9litt67E2Q39BddquuJp75nbUyprixYSbTUCRrrG6USRuYmQ2NNCObuf6uM4/2ht+9K+0YkJMCuYniBMvBe/eK9t0LukNvOGHOEao7dy141HHTne8wV6nkiF0fuX49i/gRetERPVayfr1EyYN8I+KJPUEcwe3ZQ47ucyFpWncZKQhddl1dmEIg7xXF/kJvn0Qpuc8kxcrseusnrz8K8qQzURxHCpLjTn0TlYjniA0EobJWXXAZHdzuej5WSQvYNQOxZSEKJAcOSxYQGawQghQIkYJU4BGP48IFPZZYpjtz/UGLgWieJ1Qex1JGvStuH6vk0dHkka39FLdvE6boJHtjBEnsyyexO3ZAyGwGdforxL68jE3IAq5V4bMY8H75xJ6unnZsmE8FUiLEOYCiAkZKjhP8HJ2pgKATCdcJ1BYVBiD21jM0P/9Xp4hbnrYWX2/3WbjhE+YXHreS1BbU5l04XUCNn41yEupdAozp8QfXmYHNaYssN8l0ZqX6wslEVhrtPxmZHdBM4P/uIEFstnnwJp+eXaJhjGtTFelGu2ob4j5jfqYuAwULXs/zUzey2Tucf5WoyRuordl5UmPyQJxdnL2OCRts7hVARWFwmCmrMGEkWho4rqEl0U3ImThVmk7sen0qkQ7ae8raPz188sbBZNVVdi0Lj7yGyp3SpzmVpQ0tKndlu/rZPUsXTyO2MoDdyAA70MBwNVwj16QgEYNJYUGSOjx0MgWB22D87Ket7ae/0u+NX/I2Yv42xoWYKC2MHDn8ITQeNs+j16ro1u8rXzz85jnNGE9Ae02uKdWCHk9oyWNhtVHUN201mbE9+5V5Kp+N/y8q/9VmAIAmfAdDofuqAxxe/qsjCwz5c6gFAk2u7QO8zG+FZDj+Mgd3+UwtB623FGXbNOVQg1UdwBiDWosztBjA1ISwxdTZozENliat02RvJTSrN9YYTHreJAUayUzWptYE/nz4cUekHLkxN7ksur6Zt1V0jpS9tkhjqp+oGfX2N1R0qlwNoyTuFgg=') format('woff2'),
+       url('iconfont.woff?t=1658035010753') format('woff'),
+       url('iconfont.ttf?t=1658035010753') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-more:before {
+  content: "\e600";
+}
+
+.iconfont-arrow-right:before {
+  content: "\e601";
+}
+
+.iconfont-arrow-up:before {
+  content: "\e602";
+}
+
+.iconfont-arrow-down:before {
+  content: "\e603";
+}
+
+.iconfont-arrow-left:before {
+  content: "\e604";
+}
+
+.iconfont-qiyeweixin:before {
+  content: "\e605";
+}
+
+.iconfont-arrow-right-b2b2b2:before {
+  content: "\e606";
+}
+
