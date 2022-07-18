@@ -12,8 +12,8 @@
       </text>
       <image v-if="data.weCom" src="@/static/qiyeweixin.png" />
     </view>
-    <view class="right" @click="toChatInfo">
-      <image src="@/static/more.svg" />
+    <view class="right">
+      <image src="@/static/more.svg" @click="toChatInfo" />
     </view>
   </view>
 </template>

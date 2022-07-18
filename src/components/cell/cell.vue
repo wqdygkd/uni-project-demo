@@ -1,5 +1,5 @@
 <template>
-  <view class="cell">
+  <view class="cell" :class="{isLink: isLink}">
     <view class="cell__left-icon" />
     <view class="cell__block" :class="{ border: border }">
       <view class="cell__content">
@@ -31,11 +31,16 @@ export default {
 
 <style lang="scss" scoped>
 .cell {
-  height: 47.2px;
+  height: 47.3px;
   padding: 0 14px;
   display: flex;
   align-items: center;
-  background: #fff;
+  // background: #fff;
+
+  &.isLink:active {
+    background: #e9e9e9;
+  }
+
   .cell__block {
     flex: 1;
     display: flex;

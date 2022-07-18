@@ -17,6 +17,6 @@ export default {
 .separator {
   width: 100%;
   background: #ededed;
-  opacity: .5;
+  opacity: 0.5;
 }
 </style>

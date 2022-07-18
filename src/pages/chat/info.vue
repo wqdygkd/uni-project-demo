@@ -7,7 +7,12 @@
     <Divider />
     <!-- <Divider :height="121" /> -->
     <CellGroup>
-      <Cell title="群聊名称" value="群聊" is-link>
+      <Cell
+        title="群聊名称"
+        :value="activedConversation.title"
+        is-link
+        @click="changeGroupTitle"
+      >
         <template #title>
           111
         </template>
@@ -71,7 +76,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['activedConversation', 'activedConversationMsg'])
+    ...mapGetters(['activedConversation'])
   },
   onLoad (options) {
     this.setActivedConversationId({ id: +options.id })
@@ -80,6 +85,9 @@ export default {
     ...mapMutations(['setActivedConversationId']),
     goBack () {
       uni.navigateBack()
+    },
+    changeGroupTitle () {
+
     }
   }
 }
