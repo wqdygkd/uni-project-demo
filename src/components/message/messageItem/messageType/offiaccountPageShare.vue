@@ -79,7 +79,7 @@ export default {
   .title {
     color: #212121;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 19px;
     margin-bottom: 3.5px;
     letter-spacing: .5px;
