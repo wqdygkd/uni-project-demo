@@ -2,7 +2,7 @@
   <view class="chat">
     <Test />
     <view class="status_bar" />
-    <TopBar :data="activedConversation" />
+    <TopBar :data="activedConversation" @leftClick="goBack" @rightClick="toChatInfo" />
     <Message class="message-box" :message-list="activedConversationMsg" />
     <!-- <SendBar class="send-bar" /> -->
   </view>
@@ -40,6 +40,14 @@ export default {
     ...mapMutations(['setActivedConversationId']),
     goBack () {
       uni.navigateBack()
+    },
+
+    toChatInfo () {
+      uni.navigateTo({
+        url: `/pages/chat/info?id=${this.activedConversation.id}`,
+        animationType: 'pop-in',
+        animationDuration: 300
+      })
     }
   }
 }

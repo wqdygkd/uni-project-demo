@@ -1,6 +1,6 @@
 <template>
   <view class="top-bar">
-    <view class="left" @click="goBack">
+    <view class="left" @click="leftClick">
       <image src="@/static/arrow-left.svg" />
     </view>
     <view class="title">
@@ -13,7 +13,7 @@
       <image v-if="data.weCom" src="@/static/qiyeweixin.png" />
     </view>
     <view class="right">
-      <image src="@/static/more.svg" @click="toChatInfo" />
+      <image src="@/static/more.svg" @click="rightClick" />
     </view>
   </view>
 </template>
@@ -32,15 +32,18 @@ export default {
   },
 
   methods: {
-    goBack () {
-      uni.navigateBack()
+    leftClick () {
+      if (this.$listeners.leftClick) {
+        this.$emit('leftClick')
+      } else {
+        uni.navigateBack()
+      }
     },
-    toChatInfo () {
-      uni.navigateTo({
-        url: `/pages/chat/info?id=${this.data.id}`,
-        animationType: 'pop-in',
-        animationDuration: 300
-      })
+
+    rightClick () {
+      if (this.$listeners.rightClick) {
+        this.$emit('rightClick')
+      }
     }
   }
 }

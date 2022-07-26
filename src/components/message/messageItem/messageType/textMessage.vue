@@ -1,10 +1,11 @@
 <template>
-  <view
-    class="text"
-    :class="{'self': msg.bySelf}"
-    @click="openlink"
-    v-html="html"
-  >
+  <view class="text" :class="{'self': msg.bySelf}">
+    <mpHtml
+      :content="html"
+      :use-anchor="true"
+      :copy-link="false"
+      @linktap="openlink"
+    />
     <!-- {{ msg.text }} -->
     <!-- V<text style="transform: scale(0.3);"> </text> -->
   </view>
@@ -12,8 +13,12 @@
 
 <script>
 // 文本消息
+import mpHtml from '@/components/mp-html/mp-html.vue'
 export default {
   name: 'TextMessage',
+  components: {
+    mpHtml
+  },
   props: {
     msg: {
       type: Object,
@@ -24,14 +29,17 @@ export default {
     html () {
       const re = /[a-zA-z]+:\/\/[^\s]*/g
       return this.msg.text.replace(re, function (website) {
-        return `<a href='javascript:void(0)' data-href='${website}' data-type='b' >${website}</a>`
+        return `<a href='${website}'>${website}</a>`
       })
     }
   },
   methods: {
     openlink (e) {
-      console.log(e)
-      console.log(e.currentTarget)
+      uni.navigateTo({
+        url: '/pages/webview/webview?url=' + e.href,
+        animationType: 'pop-in',
+        animationDuration: 300
+      })
     }
   }
 }
