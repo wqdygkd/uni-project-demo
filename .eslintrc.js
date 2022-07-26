@@ -1,6 +1,8 @@
 module.exports = {
   extends: ['wqdy/configs/vue2-js'],
   globals: {
-    uni: 'readonly'
+    uni: 'readonly',
+    plus: 'readonly',
+    weex: 'readonly'
   }
 }

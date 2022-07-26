@@ -3,7 +3,7 @@
     <view class="left" @click="leftClick">
       <image src="@/static/arrow-left.svg" />
     </view>
-    <view class="title">
+    <view v-if="data && data.title" class="title">
       <view class="title-name">
         {{ data.title }}
       </view>

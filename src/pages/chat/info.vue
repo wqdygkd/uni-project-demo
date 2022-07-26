@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import TopBar from './components/topbar/topbar1'
+import TopBar from '@/components/topbar/topbar1'
 import GroupMember from './components/groupMember.vue'
 import Cell from '@/components/cell/cell'
 import CellGroup from '@/components/cell-group/cell-group'

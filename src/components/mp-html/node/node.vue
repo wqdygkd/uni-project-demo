@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <view :id="attrs.id" :class="'_block _'+name+' '+attrs.class" :style="attrs.style">
     <block v-for="(n, i) in childs" :key="i">
@@ -289,7 +290,7 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      for (this.root = this.$parent; this.root.$options.name !== 'mp-html'; this.root = this.root.$parent);
+      for (this.root = this.$parent; this.root.$options.name !== 'MpHtml'; this.root = this.root.$parent);
     })
     // #ifdef H5 || APP-PLUS
     if (this.opts[0]) {

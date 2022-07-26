@@ -57,11 +57,12 @@ const dom = weex.requireModule('dom')
 // #endif
 export default {
   name: 'MpHtml',
-  // #endif
   // #ifndef APP-PLUS-NVUE
   components: {
     node
   },
+  // #endif
+
   props: {
     containerStyle: {
       type: String,
@@ -75,7 +76,10 @@ export default {
       type: [Boolean, String],
       default: true
     },
-    domain: String,
+    domain: {
+      type: String,
+      default: ''
+    },
     errorImg: {
       type: String,
       default: ''
@@ -96,8 +100,14 @@ export default {
       type: [Boolean, String],
       default: true
     },
-    scrollTable: [Boolean, String],
-    selectable: [Boolean, String],
+    scrollTable: {
+      type: [Boolean, String],
+      default: ''
+    },
+    selectable: {
+      type: [Boolean, String],
+      default: ''
+    },
     setTitle: {
       type: [Boolean, String],
       default: true
@@ -106,11 +116,20 @@ export default {
       type: [Boolean, String],
       default: true
     },
-    tagStyle: Object,
-    useAnchor: [Boolean, Number]
+    tagStyle: {
+      type: Object,
+      default: () => {}
+    },
+    useAnchor: {
+      type: [Boolean, Number],
+      default: false
+    }
   },
+
   // #ifdef VUE3
   emits: ['load', 'ready', 'imgtap', 'linktap', 'play', 'error'],
+  // #endif
+
   data () {
     return {
       nodes: [],
@@ -119,7 +138,7 @@ export default {
       // #endif
     }
   },
-  // #endif
+
   watch: {
     content (content) {
       this.setContent(content)

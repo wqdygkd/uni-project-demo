@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import TopBar from './components/topbar/topbar'
+import TopBar from '@/components/topbar/topbar'
 import Message from '@/components/message/message'
 // import SendBar from '@/components/sendbar/sendbar'
 import Test from '@/components/test/test'
