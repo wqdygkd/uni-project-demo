@@ -2,7 +2,13 @@
   <view class="chat">
     <Test />
     <view class="status_bar" />
-    <TopBar :data="activedConversation" @leftClick="goBack" @rightClick="toChatInfo" />
+    <TopBar
+      :data="activedConversation"
+      :title="title"
+      :show-we-com="true"
+      @leftClick="goBack"
+      @rightClick="toChatInfo"
+    />
     <Message class="message-box" :message-list="activedConversationMsg" />
     <!-- <SendBar class="send-bar" /> -->
   </view>
@@ -28,7 +34,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['activedConversation', 'activedConversationMsg'])
+    ...mapGetters(['activedConversation', 'activedConversationMsg']),
+    title () {
+      return `${this.activedConversation.title}(${this.activedConversation.groupMemberCount})`
+    }
   },
   onLoad (options) {
     this.setActivedConversationId({ id: +options.id })

@@ -1,19 +1,26 @@
 <template>
   <view class="top-bar">
-    <view class="left" @click="leftClick">
-      <image src="@/static/arrow-left.svg" />
+    <view v-if="showLeft" class="left" @click="leftClick">
+      <view class="left__default">
+        <i :class="`iconfont ${leftIconClass}`" />
+      </view>
     </view>
+
     <view v-if="data && data.title" class="title">
       <view class="title-name">
-        {{ data.title }}
+        {{ title }}
       </view>
-      <text v-if="data.type === 'groupchat'">
+      <!-- <text v-if="data.type === 'groupchat'">
         ({{ data.groupMemberCount }})
-      </text>
-      <image v-if="data.weCom" src="@/static/qiyeweixin.png" />
+      </text> -->
+      <image v-if="data.weCom && showWeCom" src="@/static/qiyeweixin.png" />
     </view>
-    <view class="right">
-      <image src="@/static/more.svg" @click="rightClick" />
+
+    <view v-if="showRight" class="right">
+      <view class="right__default" @click="rightClick">
+        <i class="iconfont iconfont-more" />
+      </view>
+      <!-- <image src="@/static/more.svg"  /> -->
     </view>
   </view>
 </template>
@@ -24,6 +31,26 @@ export default {
     data: {
       type: Object,
       default: () => {}
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    showLeft: {
+      type: Boolean,
+      default: true
+    },
+    leftIconClass: {
+      type: String,
+      default: 'iconfont-arrow-left'
+    },
+    showRight: {
+      type: Boolean,
+      default: true
+    },
+    showWeCom: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -58,7 +85,7 @@ export default {
   font-weight: 500;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   box-sizing: border-box;
   z-index: 100;
   &::before {
@@ -89,20 +116,28 @@ export default {
       height: 18px;
     }
   }
+
   .left {
     padding-left: 5px;
-    uni-image {
-      width: 25px;
-      height: 25px;
-    }
+    left: 0;
   }
+
   .right {
     padding-right: 12.5px;
-    uni-image {
+    right: 0;
+  }
+
+  .left, .right {
+    position: absolute;
+    &__default {
       width: 25px;
       height: 25px;
-      // transform: translate();
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        font-size: 15px;
+      }
     }
   }
 }

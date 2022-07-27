@@ -2,7 +2,12 @@
   <view class="chat-info">
     <Test :bg="bg" />
     <view class="status_bar" />
-    <TopBar :data="activedConversation" />
+    <TopBar
+      :data="activedConversation"
+      :title="title"
+      :show-right="false"
+      @leftClick="goBack"
+    />
     <GroupMember />
     <Divider />
     <!-- <Divider :height="121" /> -->
@@ -46,7 +51,7 @@
 </template>
 
 <script>
-import TopBar from '@/components/topbar/topbar1'
+import TopBar from '@/components/topbar/topbar'
 import GroupMember from './components/groupMember.vue'
 import Cell from '@/components/cell/cell'
 import CellGroup from '@/components/cell-group/cell-group'
@@ -76,7 +81,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['activedConversation'])
+    ...mapGetters(['activedConversation']),
+    title () {
+      return `群聊信息(${this.activedConversation.groupMemberCount})`
+    }
   },
   onLoad (options) {
     this.setActivedConversationId({ id: +options.id })
