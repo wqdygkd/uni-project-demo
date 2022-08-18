@@ -1,5 +1,5 @@
 <template>
-  <view class="chat-info">
+  <view class="page chat-info">
     <Test :bg="bg" />
     <view class="status_bar" />
     <TopBar
@@ -103,14 +103,6 @@ export default {
 
 <style lang="scss" scoped>
 .chat-info {
-  height: 100vh;
-  // background: #ededed;
-  position: relative;
-  overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-
   > * {
     position: relative;
   }

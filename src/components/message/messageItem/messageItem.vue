@@ -83,6 +83,7 @@ export default {
 .message-item {
   // background: #fff;
   // margin-bottom: 20px;
+  transform: rotate(180deg);
   .has-avatar {
     display: flex;
     padding: 0 5.5px;

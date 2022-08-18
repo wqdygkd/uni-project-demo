@@ -26,4 +26,14 @@ export default {
 <style lang="scss">
 @import "./static/styles/index.scss";
 @import "./static/iconfont/iconfont.css";
+
+.page {
+  height: 100vh;
+  background: #ededed;
+  position: relative;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
 </style>

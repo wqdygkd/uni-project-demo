@@ -6,7 +6,7 @@
       </view>
     </view>
 
-    <view v-if="data && data.title" class="title">
+    <view class="title">
       <view class="title-name">
         {{ title }}
       </view>
@@ -17,9 +17,12 @@
     </view>
 
     <view v-if="showRight" class="right">
-      <view class="right__default" @click="rightClick">
+      <slot v-if="!!$scopedSlots.right" name="right" />
+
+      <view v-else class="right__default" @click="rightClick">
         <i class="iconfont iconfont-more" />
       </view>
+
       <!-- <image src="@/static/more.svg"  /> -->
     </view>
   </view>
@@ -30,7 +33,7 @@ export default {
   props: {
     data: {
       type: Object,
-      default: () => {}
+      default: () => ({})
     },
     title: {
       type: String,
@@ -56,6 +59,10 @@ export default {
   data () {
     return {
     }
+  },
+  mounted () {
+    // console.log(this.$scopedSlots)
+    // console.log(this.$slots)
   },
 
   methods: {

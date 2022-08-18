@@ -1,23 +1,14 @@
 <template>
-  <view class="content">
-    <view class="status_bar">
-      <!-- 这里是状态栏 -->
-    </view>
-    <view class="top-bar">
-      <uni-nav-bar>
-        <view class="title">
-          微信
-        </view>
-        <block slot="right">
-          <view class="right">
-            <uni-icons class="search" type="search" size="30" />
-            <text>
-              <uni-icons class="action" type="plus" size="30" />
-            </text>
-          </view>
-        </block>
-      </uni-nav-bar>
-    </view>
+  <view class="page">
+    <Test :bg="['https://pic.rmb.bdstatic.com/bjh/2934725cddc12de5c16f7912f96b70ff.jpeg', 'https://pic.rmb.bdstatic.com/bjh/ba7e075f41a85be6f402d2ef07ea1f8f.jpeg']" />
+    <view class="status_bar" />
+
+    <TopBar title="微信" :show-left="false">
+      <template #right>
+        111
+      </template>
+    </TopBar>
+
     <view>
       <uni-list :border="true">
         <view v-for="item in conversationList" :key="item.id">
@@ -42,8 +33,12 @@
 
 <script>
 import { mapState } from 'vuex'
+import Test from '@/components/test/test'
+import TopBar from '@/components/topbar/topbar'
 export default {
   components: {
+    Test,
+    TopBar
     // uniIcons
   },
 
@@ -69,10 +64,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  width: 100%;
-  text-align: center;
-  line-height: 44px;
-  font-size: 16px;
-}
+
 </style>

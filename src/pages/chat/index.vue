@@ -1,5 +1,5 @@
 <template>
-  <view class="chat">
+  <view class="page chat">
     <Test />
     <view class="status_bar" />
     <TopBar
@@ -64,13 +64,6 @@ export default {
 
 <style lang="scss" scoped>
 .chat {
-  height: 100vh;
-  background: #ededed;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  display: flex;
-  flex-direction: column;
   .message-box {
     height: calc(100% - 117px);
     // flex: 1;

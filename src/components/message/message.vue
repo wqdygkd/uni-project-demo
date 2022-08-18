@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
 .message {
   position: relative;
+  transform: rotate(180deg);
   // z-index: 100;
   overflow-x: scroll;
 }
