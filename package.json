@@ -44,8 +44,7 @@
     "cross-env": "^7.0.2",
     "eslint-config-wqdy": "^0.0.4",
     "postcss-comment": "^2.0.0",
-    "sass": "^1.54.4",
-    "vue-template-compiler": "^2.7.8"
+    "sass": "^1.54.4"
   },
   "browserslist": [
     "Android >= 4.4",
