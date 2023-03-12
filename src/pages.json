@@ -73,6 +73,10 @@
     "navigationBarTitleText": "微信单机版",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
+    "rpxCalcMaxDeviceWidth": 960,
+		"rpxCalcBaseDeviceWidth": 375,
+		"rpxCalcIncludeWidth": 750,
+    "dynamicRpx": true,
     "h5": {
       "titleNView": false
     },
