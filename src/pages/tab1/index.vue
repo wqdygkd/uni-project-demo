@@ -69,6 +69,8 @@
         </view>
       </view>
     </view>
+
+    <SharePopup ref="sharePopup" />
   </view>
 </template>
 
@@ -76,10 +78,12 @@
 import { mapState } from 'vuex'
 // import Test from '@/components/test/test'
 import TopBar from '@/components/topbar/topbar'
+import SharePopup from '@/components/sharePopup/sharePopup'
 export default {
   components: {
     // Test,
-    TopBar
+    TopBar,
+    SharePopup
   },
 
   data () {
@@ -93,11 +97,12 @@ export default {
   },
   methods: {
     toChat (item) {
-      uni.navigateTo({
-        url: `/pages/chat/index?id=${item.id}`,
-        animationType: 'pop-in',
-        animationDuration: 300
-      })
+      this.$refs.sharePopup.open()
+      // uni.navigateTo({
+      //   url: `/pages/chat/index?id=${item.id}`,
+      //   animationType: 'pop-in',
+      //   animationDuration: 300
+      // })
     }
   }
 }
